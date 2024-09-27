@@ -40,7 +40,7 @@ class CookPad(AbstractScraper):
                         group_dict[purpose] = IngredientGroup(
                             ingredients=[], purpose=purpose
                         )
-                        group_dict[purpose].ingredients.append(ingredient)
+                    group_dict[purpose].ingredients.append(ingredient)
                 else:
                     group_dict[current_purpose].ingredients.append(ingredient)
 
