@@ -3,6 +3,7 @@ from typing import List
 
 from ._abstract import AbstractScraper
 from ._grouping_utils import IngredientGroup
+from ._utils import normalize_string
 
 
 class CookPad(AbstractScraper):
@@ -18,36 +19,48 @@ class CookPad(AbstractScraper):
 
         current_purpose = None
         group_dict[None] = IngredientGroup(ingredients=[], purpose=None)
+
         for li in self.soup.find_all("li", class_="justified-quantity-and-name"):
             if "headline" in li.get("class", []):
-                purpose = li.find("span").get_text(strip=True)
+                purpose = normalize_string(li.get_text())
                 group_dict[purpose] = IngredientGroup(ingredients=[], purpose=purpose)
                 current_purpose = purpose
             else:
-                span_text = li.find("span").get_text(strip=True)
-                bdi_text = li.find("bdi").get_text(strip=True)
-                # Combine the ingredient name with the quantity if available
-                ingredient = f"{span_text} {bdi_text}".strip()
+                ingredient = normalize_string(li.get_text())
 
-                # Get the first character of the span text
-                first_char = span_text[0]
+                # Check for a marker like (A), (B), etc.
+                marker_match = self.get_marker(ingredient)
 
-                # If the first character is a non-Japanese character (like "A", "✳︎", etc.)
-                # then group the ingredient under that character
-                if self.is_non_japanese_character(first_char):
-                    purpose = first_char
+                if marker_match:
+                    purpose = marker_match
                     if purpose not in group_dict:
                         group_dict[purpose] = IngredientGroup(
                             ingredients=[], purpose=purpose
                         )
                     group_dict[purpose].ingredients.append(ingredient)
                 else:
-                    group_dict[current_purpose].ingredients.append(ingredient)
+                    # If no marker, check if it starts with a non-Japanese character
+                    first_char = ingredient[0]
+                    if self.is_non_japanese_character(first_char):
+                        purpose = first_char
+                        if purpose not in group_dict:
+                            group_dict[purpose] = IngredientGroup(
+                                ingredients=[], purpose=purpose
+                            )
+                        group_dict[purpose].ingredients.append(ingredient)
+                    else:
+                        group_dict[current_purpose].ingredients.append(ingredient)
 
         if group_dict[None].ingredients.count == 0:
             del group_dict[None]
         # Convert the group_dict values to a list of IngredientGroup objects
         return list(group_dict.values())
+
+    # Helper function to check if a string starts with a marker like (A), (B), etc.
+    def get_marker(self, s):
+        # This regex looks for patterns like (A), (B), (1), etc.
+        match = re.match(r"^\([A-Za-z0-9]+\)", s)
+        return match.group(0) if match else None
 
     # Helper function to check if a string starts with a non-Japanese special character
     def is_non_japanese_character(self, s):
