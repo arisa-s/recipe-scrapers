@@ -14,6 +14,11 @@ class Kurashiru(AbstractScraper):
     def site_name(self):
         return "Kurashiru"
 
+    def title(self):
+        title = self.soup.find("h1", class_="title").get_text()
+        cleaned_title = re.sub(r"\s*レシピ・作り方$", "", title)
+        return cleaned_title
+
     def ingredient_groups(self) -> List[IngredientGroup]:
         group_dict = {}  # Dictionary to hold groups by purpose
 
