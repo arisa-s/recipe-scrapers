@@ -1,5 +1,5 @@
 from ._abstract import AbstractScraper
-from ._exceptions import StaticValueException
+from ._grouping_utils import group_ingredients
 
 
 class CookPad(AbstractScraper):
@@ -8,4 +8,14 @@ class CookPad(AbstractScraper):
         return "cookpad.com"
 
     def site_name(self):
-        raise StaticValueException(return_value="Cookpad")
+        return "Cookpad"
+
+    def ingredient_groups(self):
+        res = group_ingredients(
+            self.ingredients(),
+            self.soup,
+            ".headline li",
+            ".not-headline li",
+        )
+        print(res)
+        return res
