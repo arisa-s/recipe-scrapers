@@ -1,4 +1,5 @@
 from __future__ import annotations
+from .kurashiru import Kurashiru
 
 __all__ = (
     "AbstractScraper",
@@ -493,6 +494,7 @@ SCRAPERS = {
     KitchenDreaming.host(): KitchenDreaming,
     KristinesKitchenBlog.host(): KristinesKitchenBlog,
     KuchynaLidla.host(): KuchynaLidla,
+    Kurashiru.host(): Kurashiru,
     LittleSunnyKitchen.host(): LittleSunnyKitchen,
     LeitesCulinaria.host(): LeitesCulinaria,
     McCormick.host(): McCormick,
