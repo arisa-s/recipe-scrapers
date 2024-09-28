@@ -1,5 +1,10 @@
 from __future__ import annotations
+from .delishkitchen import DelishKitchen
 from .kurashiru import Kurashiru
+from .lettuceclub import LettuceClub
+from .macaroni import Macaroni
+from .nadia import Nadia
+from .rakutenrecipe import RakutenRecipe
 
 __all__ = (
     "AbstractScraper",
@@ -469,6 +474,7 @@ SCRAPERS = {
     DamnDelicious.host(): DamnDelicious,
     DavidLebovitz.host(): DavidLebovitz,
     Delish.host(): Delish,
+    DelishKitchen.host(): DelishKitchen,
     DinnerAtTheZoo.host(): DinnerAtTheZoo,
     DinnerThenDessert.host(): DinnerThenDessert,
     Dishnz.host(): Dishnz,
@@ -495,8 +501,10 @@ SCRAPERS = {
     KristinesKitchenBlog.host(): KristinesKitchenBlog,
     KuchynaLidla.host(): KuchynaLidla,
     Kurashiru.host(): Kurashiru,
+    LettuceClub.host(): LettuceClub,
     LittleSunnyKitchen.host(): LittleSunnyKitchen,
     LeitesCulinaria.host(): LeitesCulinaria,
+    Macaroni.host(): Macaroni,
     McCormick.host(): McCormick,
     Miljuschka.host(): Miljuschka,
     ModernHoney.host(): ModernHoney,
@@ -506,6 +514,7 @@ SCRAPERS = {
     MyJewishLearning.host(): MyJewishLearning,
     MyKoreanKitchen.host(): MyKoreanKitchen,
     MyVegetarianRoots.host(): MyVegetarianRoots,
+    Nadia.host(): Nadia,
     NotEnoughCinnamon.host(): NotEnoughCinnamon,
     NutritionFacts.host(): NutritionFacts,
     OneSweetAppetite.host(): OneSweetAppetite,
@@ -513,6 +522,7 @@ SCRAPERS = {
     PeelWithZeal.host(): PeelWithZeal,
     PinchOfYum.host(): PinchOfYum,
     PotatoRolls.host(): PotatoRolls,
+    RakutenRecipe.host(): RakutenRecipe,
     Recept.host(): Recept,
     ReceptyPreVas.host(): ReceptyPreVas,
     RecipeGirl.host(): RecipeGirl,

@@ -1,0 +1,44 @@
+{
+  "host": "oceans-nadia.com",
+  "canonical_url": "https://oceans-nadia.com/user/579706/recipe/490670",
+  "site_name": "Nadia",
+  "author": "はっち",
+  "language": "ja",
+  "title": "【お子が爆食❤️】ほうれん草とトマトのレンチンツナサラダ",
+  "ingredients": [
+    "ほうれん草 1パック",
+    "ミニトマト 5〜6個",
+    "ツナ缶 1缶",
+    "A ポン酢 大さじ1",
+    "A 中華だし 小さじ1"
+  ],
+  "ingredient_groups": [
+    {
+      "ingredients": [
+        "ほうれん草 1パック",
+        "ミニトマト 5〜6個",
+        "ツナ缶 1缶"
+      ],
+      "purpose": null
+    },
+    {
+      "ingredients": [
+        "A ポン酢 大さじ1",
+        "A 中華だし 小さじ1"
+      ],
+      "purpose": "A"
+    }
+  ],
+  "instructions_list": [
+    "ほうれん草をよく洗い、2〜3cm程の長さに切り分ける。",
+    "耐熱容器にほうれん草を加えふんわりラップをし、電子レンジで3分加熱する。加熱後ほうれん草を絞り、しっかり水気を切っておく。",
+    "ミニトマトのヘタを取り、半分に輪切りにする。",
+    "ほうれん草、ミニトマト、ツナ缶とA ポン酢大さじ1、中華だし小さじ1を混ぜ合わせる。"
+  ],
+  "total_time": "5",
+  "yields": "2",
+  "image": "https://asset.oceans-nadia.com/upload/save_image/ab/abef5d677bda92600651ed2e45c333b6.jpg?impolicy=inside&w=1000&h=1000",
+  "description": "ちゃちゃっと5分で作れるレンチン簡単サラダ🍅子供の食いつきが最高でした・・・！ポン酢を使っているのでさっぱりと食べれますよー✨",
+  "category": "副菜",
+  "keywords": []
+}

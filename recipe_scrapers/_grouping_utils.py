@@ -157,14 +157,21 @@ def is_non_japanese_character(first_char: str) -> bool:
 
 
 def group_ingredients_jp(
-    soup, ingredient_selector: str, purpose_selector: str
+    soup,
+    ingredients_selector: str,
+    purpose_selector: str | None = None,
+    group_item_selector: str | None = None,
+    quantity_selector: str | None = None,
 ) -> List[IngredientGroup]:
     """
     Groups ingredients based on purpose markers, non-Japanese characters, or no markers.
+    Processes ingredients within a specific 'ul' selector.
 
     :param soup: BeautifulSoup object representing the page content.
-    :param ingredient_selector: CSS class or tag for selecting ingredients.
+    :param ingredients_selector: CSS class or tag for selecting the 'ul' containing the ingredients.
     :param purpose_selector: CSS class for selecting ingredient group purposes.
+    :param group_item_selector: CSS class for grouping items within the 'ul'.
+    :param quantity_selector: CSS class for selecting quantity within the ingredients.
     :return: List of IngredientGroup objects.
     """
     group_dict: Dict[Optional[str], IngredientGroup] = {
@@ -172,35 +179,78 @@ def group_ingredients_jp(
     }
     current_purpose: Optional[str] = None
 
-    for li in soup.find_all("li", class_=ingredient_selector):
-        if purpose_selector in li.get("class", []):
-            purpose = normalize_string(li.get_text())
+    def add_to_group(purpose: Optional[str], ingredient: str | None):
+        """Helper function to add ingredient to the correct group."""
+        if purpose not in group_dict:
             group_dict[purpose] = IngredientGroup(ingredients=[], purpose=purpose)
-            current_purpose = purpose
-        else:
+        group_dict[purpose].ingredients.append(ingredient)
+
+    ingredients_container = soup.find_all(class_=ingredients_selector)
+
+    for ul in ingredients_container:
+        for li in ul.find_all("li"):
+            li_text = normalize_string(li.get_text())
+
+            # Handle purpose-based grouping
+            if purpose_selector and purpose_selector in li.get("class", []):
+                current_purpose = li_text
+                add_to_group(current_purpose, None)
+                continue
+
+            # Handle quantity-based grouping if there's no quantity
+            if quantity_selector and li.find(class_=quantity_selector).get_text() == "":
+                current_purpose = li_text
+                add_to_group(current_purpose, None)
+                continue
+
+            # Ingredient grouping by class or marker
             ingredient = normalize_string(li.get_text())
             marker_match = get_marker(ingredient)
+            first_char = ingredient[0]
 
             if marker_match:
-                purpose = marker_match
-                if purpose not in group_dict:
-                    group_dict[purpose] = IngredientGroup(
-                        ingredients=[], purpose=purpose
-                    )
-                group_dict[purpose].ingredients.append(ingredient)
+                add_to_group(marker_match, ingredient)
+            elif is_non_japanese_character(first_char):
+                add_to_group(first_char, ingredient)
             else:
-                first_char = ingredient[0]
-                if is_non_japanese_character(first_char):
-                    purpose = first_char
-                    if purpose not in group_dict:
-                        group_dict[purpose] = IngredientGroup(
-                            ingredients=[], purpose=purpose
-                        )
-                    group_dict[purpose].ingredients.append(ingredient)
-                else:
-                    group_dict[current_purpose].ingredients.append(ingredient)
+                # If group item selector is specified but not found, reset the current purpose
+                if group_item_selector and group_item_selector not in li.get(
+                    "class", []
+                ):
+                    current_purpose = None
+                add_to_group(current_purpose, ingredient)
 
     if not group_dict[None].ingredients:
         del group_dict[None]
+
+    return list(group_dict.values())
+
+
+def group_ingredients_by_starting_char(
+    ingredients: List[str], lang: str
+) -> List[IngredientGroup]:
+    group_dict: Dict[Optional[str], IngredientGroup] = {
+        None: IngredientGroup(ingredients=[], purpose=None)
+    }
+
+    def add_to_group(purpose: Optional[str], ingredient: str | None):
+        """Helper function to add ingredient to the correct group."""
+        if purpose not in group_dict:
+            group_dict[purpose] = IngredientGroup(ingredients=[], purpose=purpose)
+        group_dict[purpose].ingredients.append(ingredient)
+
+    for ingredient in ingredients:
+        marker_match = get_marker(ingredient)
+        if marker_match:
+            add_to_group(marker_match, ingredient)
+        else:
+            first_char = ingredient[0]
+            if lang in ["jp", "ja"]:
+                if is_non_japanese_character(first_char):
+                    add_to_group(first_char, ingredient)
+                else:
+                    add_to_group(None, ingredient)
+            else:
+                add_to_group(None, ingredient)
 
     return list(group_dict.values())

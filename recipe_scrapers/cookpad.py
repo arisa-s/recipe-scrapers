@@ -13,6 +13,4 @@ class CookPad(AbstractScraper):
         return "Cookpad"
 
     def ingredient_groups(self) -> List[IngredientGroup]:
-        return group_ingredients_jp(
-            self.soup, "justified-quantity-and-name", "headline"
-        )
+        return group_ingredients_jp(self.soup, "ingredient-list", "headline")

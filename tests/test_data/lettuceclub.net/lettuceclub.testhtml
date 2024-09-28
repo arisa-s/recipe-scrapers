@@ -1,0 +1,2051 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+
+<script type="text/javascript">
+(function(){
+    var crmId = localStorage.getItem('CRM_ID');
+    if (!crmId) return
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'CRM_ID':crmId
+    })
+})()
+</script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T278RV');</script>
+<!-- End Google Tag Manager -->
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>レタスクラブ - へとへと解放宣言！レシピや生活の知恵が満載</title>
+    <meta name="description" content="レタスクラブは毎日をラクにする生活情報サイトです。簡単に作れるプロのラクレシピ・献立から、生活に役立つ読みものまで、日々のへとへとから解放されるお役立ち情報をお届けします！">
+    <meta name="keywords" content="レシピ,料理,プロ,レタスクラブ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="format-detection" content="telephone=no">
+    <meta name="p:domain_verify" content="6c31717cae579ac6e4d7952da018f3d2">
+
+
+
+
+
+    <link rel="stylesheet" href="/asset/css/style_28567037.css">
+    <link rel="stylesheet" href="/asset/css/push_28264632.css">
+
+
+
+
+
+
+
+    <meta property="og:title" content="レタスクラブ - へとへと解放宣言！レシピや生活の知恵が満載 - レタスクラブ">
+    
+    <meta property="og:type" content="article">
+    
+    <meta property="og:url" content="https://www.lettuceclub.net/">
+    
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="レタスクラブ">
+    <meta property="og:description" content="レタスクラブは毎日をラクにする生活情報サイトです。簡単に作れるプロのラクレシピ・献立から、生活に役立つ読みものまで、日々のへとへとから解放されるお役立ち情報をお届けします！">
+    <meta property="fb:app_id" content="471784522921967">
+    
+    <meta name="twitter:card" content="summary">
+    
+    <meta name="twitter:domain" content="https://www.lettuceclub.net">
+    
+    <meta name="twitter:site" content="@lettuce__club">
+    <meta name="twitter:title" content="レタスクラブ - へとへと解放宣言！レシピや生活の知恵が満載 - レタスクラブ">
+    <meta name="twitter:description" content="レタスクラブは毎日をラクにする生活情報サイトです。簡単に作れるプロのラクレシピ・献立から、生活に役立つ読みものまで、日々のへとへとから解放されるお役立ち情報をお届けします！">
+
+
+
+
+<link rel="canonical" href="https://www.lettuceclub.net/">
+
+
+
+
+    
+
+    
+        
+
+<!-- Ad - LCN All -->
+<script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+<script async src="//micro.rubiconproject.com/prebid/dynamic/16326.js"></script>
+<script>
+  !function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+</script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+
+  var gptAdSlots = [];
+  var headerBiddingSlots = [];
+  var nonHeaderBiddingSlots = [];
+
+  var pbjs = pbjs || {};
+  pbjs.que = pbjs.que || [];
+
+  var failSafeTimeout = 2500;
+  var apstag_pubID = '3556';
+  var apstag_bidTimeout = 1000;
+
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    gptAdSlots[0] = googletag.defineSlot('/11970315/lcn_all_ol_gam', [728, 90], 'lcn_all_ol_gam').addService(googletag.pubads());
+    gptAdSlots[1] = googletag.defineSlot('/11970315/lcn_all_bb_gam', [[970, 250], [728, 90]], 'lcn_all_bb_gam').addService(googletag.pubads());
+    gptAdSlots[2] = googletag.defineSlot('/11970315/lcn_all_1r_gam', [300, 250], 'lcn_all_1r_gam').addService(googletag.pubads());
+    gptAdSlots[3] = googletag.defineSlot('/11970315/lcn_all_2r_gam', [300, 250], 'lcn_all_2r_gam').addService(googletag.pubads());
+    gptAdSlots[4] = googletag.defineSlot('/11970315/lcn_top_bb_gam', [1000, 140], 'lcn_top_bb_gam').setCollapseEmptyDiv(true, true).addService(googletag.pubads());
+    gptAdSlots[5] = googletag.defineSlot('/11970315/lcn_top_ssr_gam', [300, 600], 'lcn_top_ssr_gam').setCollapseEmptyDiv(true, true).addService(googletag.pubads());
+    gptAdSlots[6] = googletag.defineSlot('/11970315/lcn_top_ssl_gam', [300, 600], 'lcn_top_ssl_gam').setCollapseEmptyDiv(true, true).addService(googletag.pubads());
+    gptAdSlots[7] = googletag.defineSlot('/11970315/lcn_all_iat1_gam', ['fluid'], 'lcn_all_iat1_gam').addService(googletag.pubads());
+    gptAdSlots[8] = googletag.defineSlot('/11970315/lcn_all_iat2_gam', ['fluid'], 'lcn_all_iat2_gam').addService(googletag.pubads());
+    gptAdSlots[9] = googletag.defineSlot('/11970315/lcn_all_iat3_gam', ['fluid'], 'lcn_all_iat3_gam').addService(googletag.pubads());
+    gptAdSlots[10] = googletag.defineSlot('/11970315/lcn_all_iat4_gam', ['fluid'], 'lcn_all_iat4_gam').addService(googletag.pubads());
+    gptAdSlots[11] = googletag.defineSlot('/11970315/lcn_all_iat5_gam', ['fluid'], 'lcn_all_iat5_gam').addService(googletag.pubads());
+    gptAdSlots[12] = googletag.defineSlot('/11970315/lcn_all_iat6_gam', ['fluid'], 'lcn_all_iat6_gam').addService(googletag.pubads());
+    gptAdSlots[13] = googletag.defineSlot('/11970315/lcn_all_iat7_gam', ['fluid'], 'lcn_all_iat7_gam').addService(googletag.pubads());
+    
+    headerBiddingSlots.push(gptAdSlots[0]);
+    headerBiddingSlots.push(gptAdSlots[1]);
+    headerBiddingSlots.push(gptAdSlots[2]);
+    headerBiddingSlots.push(gptAdSlots[3]);
+    nonHeaderBiddingSlots.push(gptAdSlots[4]);
+    nonHeaderBiddingSlots.push(gptAdSlots[5]);
+    nonHeaderBiddingSlots.push(gptAdSlots[6]);
+    nonHeaderBiddingSlots.push(gptAdSlots[7]);
+    nonHeaderBiddingSlots.push(gptAdSlots[8]);
+    nonHeaderBiddingSlots.push(gptAdSlots[9]);
+    nonHeaderBiddingSlots.push(gptAdSlots[10]);
+    nonHeaderBiddingSlots.push(gptAdSlots[11]);
+    nonHeaderBiddingSlots.push(gptAdSlots[12]);
+    nonHeaderBiddingSlots.push(gptAdSlots[13]);
+
+    googletag.pubads().setTargeting('lcn_ad', ['TOP']);
+
+    googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().disableInitialLoad();
+    googletag.pubads().enableSingleRequest();
+
+    googletag.enableServices();
+
+    if (nonHeaderBiddingSlots.length > 0) {
+      googletag.pubads().refresh(nonHeaderBiddingSlots);
+    }
+  });
+
+  apstag.init({
+    pubID: apstag_pubID,
+    adServer: 'googletag',
+    bidTimeout: apstag_bidTimeout
+  });
+
+  var apstagSlots = [{
+    slotID: 'lcn_all_ol_gam',
+    sizes: [[728, 90]],
+    slotName: 'lcn_all_ol_aps'
+  }, {
+    slotID: 'lcn_all_bb_gam',
+    sizes: [[970, 250], [728, 90]],
+    slotName: 'lcn_all_bb_aps'
+  }, {
+    slotID: 'lcn_all_1r_gam',
+    sizes: [[300, 250]],
+    slotName: 'lcn_all_1r_aps'
+  }, {
+    slotID: 'lcn_all_2r_gam',
+    sizes: [[300, 250]],
+    slotName: 'lcn_all_2r_aps'
+  }];
+
+  function fetchHeaderBids() {
+    var bidders = ['a9', 'prebid'];
+
+    var requestManager = {
+      adserverRequestSent: false
+    };
+
+    bidders.forEach(function(bidder) {
+      requestManager[bidder] = false;
+    })
+
+    function allBiddersBack() {
+      var allBiddersBack = bidders
+        .map(function(bidder) {return requestManager[bidder]; })
+        .filter(function(bool) {return bool;})
+        .length === bidders.length;
+      return allBiddersBack;
+    }
+
+    function headerBidderBack(bidder) {
+      if (requestManager.adserverRequestSent === true) {
+        return;
+      }
+      if (bidder === 'a9') {
+        googletag.cmd.push(function() {
+          apstag.setDisplayBids();
+        });
+      } else if (bidder === 'prebid') {
+      }
+
+      requestManager[bidder] = true;
+
+      if (allBiddersBack()) {
+        sendAdserverRequest();
+      }
+    }
+
+    function sendAdserverRequest() {
+      if (requestManager.adserverRequestSent === true) {
+        return;
+      }
+      requestManager.adserverRequestSent = true;
+      googletag.cmd.push(function() {
+        googletag.pubads().refresh(headerBiddingSlots);
+      });
+    }
+
+    function requestBids() {
+      apstag.fetchBids({
+        slots: apstagSlots
+      }, function(bids) {
+        headerBidderBack('a9');
+      });
+
+      googletag.cmd.push(function() {
+        pbjs.que.push(function() {
+          pbjs.rp.requestBids({
+            callback: function (bidResponses) {
+              headerBidderBack('prebid');
+            },
+            gptSlotObjects: headerBiddingSlots
+          });
+        });
+      });
+    }
+
+    requestBids();
+
+    window.setTimeout(function() {
+        sendAdserverRequest();
+    }, failSafeTimeout);
+  }
+
+  fetchHeaderBids();
+</script>
+        
+
+
+    
+
+
+
+    
+<script>
+  googletag.cmd.push(function() {
+  
+    googletag.pubads().setTargeting('environ', ['www']);
+  
+  });
+</script>
+
+
+</head>
+<body class="top ad_gateway-on">
+
+
+
+    
+
+    
+        <!--PC WipeOverlay -->
+<ins id="yoneads84180">
+<script type="text/javascript" src="//img.ak.impact-ad.jp/ic/pone/tags/0217/084180_1.js"></script>
+</ins>
+        
+
+
+    
+
+
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T278RV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <div class="l-page">
+        <div class="js-header">
+
+
+            <header class="l-header"><div class="l-header__inner">
+
+                <h1 class="p-sitetitle">
+                    <a href="/" class="p-sitetitle__logo"><img src="/asset/img/base/logo.svg" alt="プロのレシピならレタスクラブ"></a>
+                    <span class="p-sitetitle__catch"><img src="/asset/img/p-sitetitle/txt-catch.svg" alt=""></span>
+                </h1>
+
+                <div class="p-maypagebtn"><a href="/mypage/">マイページ</a></div>
+                <div class="p-hamburger js-modal-open" data-for="js-menu-modal"><button>メニュー</button></div>
+    
+        
+            
+
+
+<div class="l-modal js-menu-modal">
+    <div class="l-modal__inner">
+      <div class="l-modal__head">
+        <a class="l-modal__logo" href="/"><img src="/asset/img/base/logo.svg" alt="レタスクラブ"></a>
+        <button class="l-modal__headClose js-modal-close" data-for="js-menu-modal"></button>
+      </div>
+      <div class="l-modal__content">
+        <nav class="p-menu">
+          <div class="p-menu__form">
+            <div class="c-formGroup__item">
+              <label class="c-radio c-radio--bold"><input type="radio" name="search-target" value="レシピ検索" checked>レシピ検索</label>
+              <label class="c-radio c-radio--bold"><input type="radio" name="search-target" value="読みもの検索">読みもの検索</label>
+            </div>
+            <div class="p-menu__formSearch js-search-recipe">
+                <div class="c-search">
+                    <input class="c-search--input search_recipe_text has-border" type="text" name="searchword" placeholder="食材名・料理名・料理家名を入力" value="" maxlength="100">
+                    <input class="c-search--submit search_recipe_button" type="button" name="searchword" value="">
+                </div>
+            </div>
+            <div class="p-menu__formSearch p-menu__formSearch--hidden js-search-yomimono">
+                <div class="c-search">
+                    <input class="c-search--input search_news_text" type="text" name="searchword" placeholder="キーワードを入力" value="" maxlength="100">
+                    <input class="c-search--submit search_news_button" type="button" name="searchword" value="">
+                </div>
+            </div>
+          <!--.p-menu__form--></div>
+
+          <h2 class="p-menu__header p-menu__header--recipe">
+            レシピ
+          </h2>
+          <ul class="p-menu__list">
+            <li class="p-menu__item">
+              <a href="/recipe/ingredient/">食材</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/recipe/category/">料理<br class="u-sponly">カテゴリ</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/recipe/kondate/">献立</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/recipe/matome/">まとめ</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/recipe/ranking/">ランキング</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/recipe/dictionary-food/">食材事典</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/recipe/dictionary-cook/">料理用語<br class="u-sponly">事典</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/recipe/search/">絞り込み<br class="u-sponly">検索</a>
+            </li>
+          </ul>
+
+          <h2 class="p-menu__header p-menu__header--yomimono">
+            読みもの
+          </h2>
+          <ul class="p-menu__list">
+            <li class="p-menu__item">
+              <a href="/news/">すべて</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/news/meal/">食</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/news/life/">くらし</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/news/beauty/">美容・健康</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/news/hobby/">趣味</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/news/child/">育児・<br class="u-sponly">子育て</a>
+            </li>
+            <li class="p-menu__item">
+              <a href="/news/ranking/">ランキング</a>
+            </li>            
+            <li class="p-menu__item">
+              <a href="/news/serial/">連載</a>
+            </li>
+          </ul>
+
+          <ul class="p-menu__topicList">
+            <li class="p-menu__topicItem p-menu__topicItem--yattemita">
+              <a href="/weblettuce/">フレンズ</a>
+            </li>
+            <li class="p-menu__topicItem p-menu__topicItem--present">
+              <a href="/present/">プレゼント</a>
+            </li>
+            <li class="p-menu__topicItem p-menu__topicItem--tokushu">
+              <a href="/special/">特集</a>
+            </li>
+            <li class="p-menu__topicItem p-menu__topicItem--zasshi">
+              <a href="/magazine/">雑誌</a>
+            </li>
+          </ul>
+
+          <div class="p-menu__social">
+            <h2 class="p-menu__socialHeader">公式アカウント</h2>
+            <ul class="p-menu__socialList">
+              <li class="p-menu__socialItem">
+                <a href="https://www.facebook.com/lettuceclub/" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-facebook.svg" alt="facebook"></a>
+              </li>
+              <li class="p-menu__socialItem">
+                <a href="https://twitter.com/lettuce__club" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-x.svg" alt="x"></a>
+              </li>
+              <li class="p-menu__socialItem">
+                <a href="https://www.pinterest.jp/weblettucestaff/" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-pinterest.svg" alt="pinterest"></a>
+              </li>
+              <li class="p-menu__socialItem">
+                <a href="https://line.me/R/ti/p/%40oa-lettuceclub" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-line.svg" alt="LINE"></a>
+              </li>
+              <li class="p-menu__socialItem">
+                <a href="https://www.instagram.com/lettuce_official/" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-insta.svg" alt="instagram"></a>
+              </li>
+            </ul>
+          <!-- .p-menu__social--></div>
+        <!-- /.p-menu --></nav>
+      <!-- /.l-modal__content --></div>
+      <div class="l-modal__foot">
+        <button class="l-modal__close js-modal-close" data-for="js-menu-modal">閉じる</button>
+      </div>
+    </div>
+  <!-- /.l-modal --></div>
+        
+    
+
+            <!-- /.l-header --></div></header>
+
+
+
+
+
+    
+        
+
+
+<nav class="p-globalnavi"><div class="p-globalnavi__inner">
+  <ul class="p-globalnavi__list">
+    <li class="p-globalnavi__item"><a href="/recipe/">
+      <span class="p-globalnavi__icon"><img src="/asset/img/p-globalnavi/icon-recipe.svg" alt=""></span>
+      <span class="p-globalnavi__text">レシピ</span>
+    </a></li>
+    <li class="p-globalnavi__item"><a href="/news/">
+      <span class="p-globalnavi__icon"><img src="/asset/img/p-globalnavi/icon-yomimono.svg" alt=""></span>
+      <span class="p-globalnavi__text">読みもの</span>
+    </a></li>
+    <li class="p-globalnavi__item"><a href="/ranking/">
+      <span class="p-globalnavi__icon"><img src="/asset/img/p-globalnavi/icon-ranking.svg" alt=""></span>
+      <span class="p-globalnavi__text">ランキング</span>
+    </a></li>
+    <li class="p-globalnavi__item"><a href="/weblettuce/">
+      <span class="p-globalnavi__icon"><img src="/asset/img/p-globalnavi/icon-yattemita.svg" alt=""></span>
+      <span class="p-globalnavi__text">フレンズ</span>
+    </a></li>
+    <li class="p-globalnavi__item"><a href="/special/">
+      <span class="p-globalnavi__icon"><img src="/asset/img/p-globalnavi/icon-tokushu.svg" alt=""></span>
+      <span class="p-globalnavi__text">特集</span>
+    </a></li>
+  </ul>
+<!-- /.p-globalnavi --></div></nav>
+    
+
+        </div>
+
+
+
+        <main class="l-main">
+    
+    
+    
+
+    
+        <!-- ゲートウェイ広告(PC/トップのみ) -->
+      <div class="p-ad__gateway p-ad__gateway--pc">
+        <div class="p-ad__gateway--center">
+          <!-- /11970315/lcn_top_bb_gam -->
+          <div id='lcn_top_bb_gam'>
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_top_bb_gam'); });
+            </script>
+          </div>
+        </div>
+        <div class="p-ad__gateway--left">
+          <!-- /11970315/lcn_top_ssl_gam -->
+          <div id='lcn_top_ssl_gam'>
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_top_ssl_gam'); });
+            </script>
+          </div>
+        </div>
+        <div class="p-ad__gateway--right">
+          <!-- /11970315/lcn_top_ssr_gam -->
+          <div id='lcn_top_ssr_gam'>
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_top_ssr_gam'); });
+            </script>
+          </div>
+        </div>
+      </div>
+      <!-- /ゲートウェイ広告(PC/トップのみ) -->
+    
+
+    
+
+        
+
+      <div class="p-mainvisual p-mainvisual--top">
+    
+        <div class="p-mainvisual__slider">
+          <ul class="p-mainvisualSlider js-mainvisualSlider">
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/gojiai/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/cMODuZJYKoBNIPcYFa.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/cMODuZJYKoBNIPcYFa.png?w=960" alt="ご自愛ラボ"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/lettuce_diet/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/IsR7RmA43ysgpIQKvR.webp?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/IsR7RmA43ysgpIQKvR.webp?w=960" alt="我慢しない＆無理しない ダイエット特集"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/condition/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/h64JHZhSoq6scSDkCw.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/h64JHZhSoq6scSDkCw.png?w=960" alt="心と体のメンテナンス　もやもや不調を整える"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/lettuce_beauty/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/HvLxPVoG4eGtWwcEjF.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/HvLxPVoG4eGtWwcEjF.png?w=960" alt="ちょうどいい、がうれしい！ レタスクラブBEAUTY"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/energy_saving/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/KgbEiEhome4Tzxf9d7.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/KgbEiEhome4Tzxf9d7.jpg?w=960" alt="私たちの省エネ"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/writing_class/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/DfHCtmNckXUFPkw7z6.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/DfHCtmNckXUFPkw7z6.png?w=960" alt="Webライティング＆在宅ワーク特集"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/sp_bousai/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/1X4R7s35CnxytMQYWv.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/1X4R7s35CnxytMQYWv.png?w=960" alt="いざというとき家族を守る「防災特集」"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/oita/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/fMFdw4pv73dip3zUuX.webp?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/fMFdw4pv73dip3zUuX.webp?w=960" alt="どれもこれも美味しくて幸せ！OITA KITCHEN"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/yamanashi/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/1RSQ0OBvD0LTb0kLJE.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/1RSQ0OBvD0LTb0kLJE.png?w=960" alt="富士の国はイッピンぞろい YAMANASHI KITCHEN"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/camping/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/AnYPcisZYLanW1Q1Jx.webp?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/AnYPcisZYLanW1Q1Jx.webp?w=960" alt="レタスクラブ ファミリーキャンプ"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/ibaraki/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/Aq8Mr4GaqYlR34NBxj.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/Aq8Mr4GaqYlR34NBxj.jpg?w=960" alt="おいしいものの宝庫です。IBARAKI KITCHEN"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/wakayama/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/2eOyInQnbjPw0bOAAm.webp?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/2eOyInQnbjPw0bOAAm.webp?w=960" alt="誇れる魅惑の食ざくざく！WAKAYAMA KITCHEN"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/tokushima/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/LpohY4l6quw1NcJXHe.webp?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/LpohY4l6quw1NcJXHe.webp?w=960" alt="食の恵み、選び放題！TOKUSHIMA KITCHEN"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/yamagata/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/ybmP9pP9ISznkkr7NQ.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/ybmP9pP9ISznkkr7NQ.jpg?w=960" alt="ほっぺた落ちる食だらけ。YAMAGATA KITCHEN"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/lettuce_okome/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/ZNTxF5elYa9expQ03A.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/ZNTxF5elYa9expQ03A.png?w=960" alt="お米特集"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/holiday_lunch/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/ddbTqGdRkKez5BV368.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/ddbTqGdRkKez5BV368.png?w=960" alt="休日の昼ごはん"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/3minuteeiyo/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/xoc5VeUqYFcYPqzaB9.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/xoc5VeUqYFcYPqzaB9.jpg?w=960" alt="知るだけで元気に！3分栄養学"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/natsunomen/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/40zPQBiV1yP1Akwltm.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/40zPQBiV1yP1Akwltm.png?w=960" alt="麺レシピ"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/seasoning/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/VaRW2iGuS9tl8BzWS8.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/VaRW2iGuS9tl8BzWS8.png?w=960" alt="使いきれない調味料、なくします！ レタスクラブ　調味料ラボ"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/money/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/HMVOvl3AfHpNatsPvu.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/HMVOvl3AfHpNatsPvu.png?w=960" alt="わが家の家計＆マネープラン"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/research/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/0WgmOum9Uz2LTIA369.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/0WgmOum9Uz2LTIA369.jpg?w=960" alt="レタスクラブ もやもや総研"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/cleanup/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/64JbvopFGPCuWoH1yR.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/64JbvopFGPCuWoH1yR.png?w=960" alt="無理なくすっきり！ 頑張らない片づけ"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/tf/sp_kitchen/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/LyMzqOZZ5ix2QC9eR2.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/LyMzqOZZ5ix2QC9eR2.jpg?w=960" alt="私が快適なキッチン"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/oya/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/Pg10Gs9FfIaJIgcx8Q.webp?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/Pg10Gs9FfIaJIgcx8Q.webp?w=960" alt="今から考えたい、私たちの親との未来"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/lettuceclub_henshucho/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/F1Z0hnOzNxN7MMggRp.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/F1Z0hnOzNxN7MMggRp.jpg?w=960" alt="レタスクラブ編集長の「コレ注目！」"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/lettuceclub_baby/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/yF01KveIAeJtuFapwP.webp?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/yF01KveIAeJtuFapwP.webp?w=960" alt="レタスクラブベビー"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/womenshealth/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/GoAG6GqLfatN6vAuGK.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/GoAG6GqLfatN6vAuGK.png?w=960" alt="いま考えたい、私たちのからだのこと"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/sp_furusatotax/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/srDnwCnwebUwKMqROE.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/srDnwCnwebUwKMqROE.png?w=960" alt="レタスクラブ 私たちのふるさと納税"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/chocolatesweets/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/mX2W9vVEbrc96ucygh.jpg?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/mX2W9vVEbrc96ucygh.jpg?w=960" alt="至福の♡チョコレートスイーツ"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/sp_vegetables/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/7Wxl2yJa50WUtUZR27.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/7Wxl2yJa50WUtUZR27.png?w=960" alt="旬野菜特集"></div>
+                </div>
+              </a>
+            </li>
+        
+            <li class="p-mainvisual__list">
+              <a href="/special/sp_sdgs/" class="p-mainvisual__head">
+                <img class="p-mainvisual__bg" src="/i/R1/img/v2/season_sp/k1PqWPHAI5dNKUdgRj.png?w=960" alt="">
+                <div class="p-mainvisual__frame">
+                  <div class="p-mainvisual__item"><img src="/i/R1/img/v2/season_sp/k1PqWPHAI5dNKUdgRj.png?w=960" alt="レタスクラブ 私たちのSDGs"></div>
+                </div>
+              </a>
+            </li>
+        
+          </ul>
+          <div class="p-mainvisualThumbnail">
+            <ul class="p-mainvisual__frame js-mainvisualThumbnail">
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/qAQhaP07f0eoyMQ9N6.png?w=130" alt="ご自愛ラボ">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/yjIb7GU7bQxS2DiLnR.webp?w=130" alt="我慢しない＆無理しない ダイエット特集">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/ptGpicWNX6pJCTLWYO.png?w=130" alt="心と体のメンテナンス　もやもや不調を整える">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/bDNGbVvP51o2e3oyPP.png?w=130" alt="ちょうどいい、がうれしい！ レタスクラブBEAUTY">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/XPYi90BKmHx9Funnu5.jpg?w=130" alt="私たちの省エネ">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/SgKsfOARfM3jY79skN.png?w=130" alt="Webライティング＆在宅ワーク特集">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/ve4yC9vDQIbh1o57U4.jpg?w=130" alt="いざというとき家族を守る「防災特集」">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/X6RQwEEeCkVwVuOijx.webp?w=130" alt="どれもこれも美味しくて幸せ！OITA KITCHEN">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/5zsxEufTWcGpq9D77r.png?w=130" alt="富士の国はイッピンぞろい YAMANASHI KITCHEN">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/MgEVsyNsHLvOTrhQaW.webp?w=130" alt="レタスクラブ ファミリーキャンプ">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/TDKQhT49LQLEa9QTbL.jpg?w=130" alt="おいしいものの宝庫です。IBARAKI KITCHEN">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/6NEy5c5wNPvodXgz8M.webp?w=130" alt="誇れる魅惑の食ざくざく！WAKAYAMA KITCHEN">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/VXidrcpUBLYOuAkxSY.webp?w=130" alt="食の恵み、選び放題！TOKUSHIMA KITCHEN">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/Con1OcU4dAb14ecxur.jpg?w=130" alt="ほっぺた落ちる食だらけ。YAMAGATA KITCHEN">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/F9yRxkMlBjVxoYW4Ki.png?w=130" alt="お米特集">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/AXXaAIn8g9vCAputZR.png?w=130" alt="休日の昼ごはん">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/WrZSwtNSLbM2t2Azcg.jpg?w=130" alt="知るだけで元気に！3分栄養学">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/WkOXzbQPuCuveU78Bg.png?w=130" alt="麺レシピ">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/ILYDImnmnjVqN9xmBq.png?w=130" alt="使いきれない調味料、なくします！ レタスクラブ　調味料ラボ">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/SWAcUuVpFS7vFQ3wEy.jpg?w=130" alt="わが家の家計＆マネープラン">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/u7nnS675uKAQOXNoXL.png?w=130" alt="レタスクラブ もやもや総研">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/hAfdXl4KueEYiAa68K.png?w=130" alt="無理なくすっきり！ 頑張らない片づけ">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/saXkzg3B6YCf6pvvZu.jpg?w=130" alt="私が快適なキッチン">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/K9WtU1Sp0MuvTFisr7.webp?w=130" alt="今から考えたい、私たちの親との未来">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/DPHQY3CFSxtDx3eB06.png?w=130" alt="レタスクラブ編集長の「コレ注目！」">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/qGXfAKa9oWQJOIov56.webp?w=130" alt="レタスクラブベビー">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/56KKlOElTZnv1F8uP5.jpg?w=130" alt="いま考えたい、私たちのからだのこと">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/zUcXxw2x6dlqKcjdF1.jpg?w=130" alt="レタスクラブ 私たちのふるさと納税">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/bC9omqi086INOCoYLE.jpg?w=130" alt="至福の♡チョコレートスイーツ">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/3aF3mHA8Ctz5yqgbgu.jpg?w=130" alt="旬野菜特集">
+              </li>
+       
+              <li class="p-mainvisualThumbnail__item">
+                <img class="p-mainvisualThumbnail__img" src="/i/R1/img/v2/season_sp/C89gyLlcFBuAhnDgdo.jpg?w=130" alt="レタスクラブ 私たちのSDGs">
+              </li>
+       
+            </ul>
+          </div>
+        </div>
+    
+
+    
+
+    
+        
+    
+
+        <div class="p-mainvisual__foot">
+          <div class="p-childrenFeature">
+            <ul class="p-childrenFeature__list">
+              <li class="p-childrenFeature__item">
+                <a href="/recipe/dish/37097/">
+              <img class="p-childrenFeature__image" src="/i/R1/img/dish/1/S20230925023002A1_000.jpg?w=450" alt="とり手羽のハニーバターソテー">
+              <div class="p-mainvisual__label"><img src="/asset/img/base/label-today-rakurecipe.png" alt="今日のラクレシピ" width="197" height="45"></div>
+              <span class="p-childrenFeature__count c-count">2024年9月28日</span>
+            </a>
+              </li>
+    
+              <li class="p-childrenFeature__item">
+                <a href="/recipe/matome/52/recipelist/">
+              <img class="p-childrenFeature__image" src="/i/R1/img/dish/1/S20241025040001A_000.jpg?w=450" alt="雑誌レタスクラブ 2024年10月号掲載">
+              <div class="p-mainvisual__label"><img src="/asset/img/base/label-newrecommend.png" alt="今月のおすすめ" width="197" height="45"></div>
+
+              <span class="p-childrenFeature__count c-count">84品</span>
+            </a>
+              </li>
+            </ul>
+          </div>
+    
+
+          <div class="p-childrenCarousel">
+            <ul class="p-childrenCarousel__list owl-carousel js-children">
+    
+        
+              <li class="p-childrenCarousel__item">
+                <a href="/recipe/matome/53/recipelist/">
+                  <img class="p-childrenCarousel__image" src="/i/R1/img/dish/1/S20241025023002A_000.jpg?w=450" alt="山本ゆりさんのボリューム満点！秋野菜おかず">
+                  <span class="p-childrenCarousel__title">秋野菜<br>おかず</span>
+                  <span class="p-childrenCarousel__count c-count">11品</span>
+                </a>
+              </li>
+        
+    
+        
+              <li class="p-childrenCarousel__item">
+                <a href="/recipe/matome/54/recipelist/">
+                  <img class="p-childrenCarousel__image" src="/i/R1/img/dish/1/S20241025029002A_000.jpg?w=450" alt="美肌や疲労対策におすすめ！ 超しっとり！ レンチンサラダチキン">
+                  <span class="p-childrenCarousel__title">レンチン<br>サラダ<br>チキン</span>
+                  <span class="p-childrenCarousel__count c-count">10品</span>
+                </a>
+              </li>
+        
+    
+        
+              <li class="p-childrenCarousel__item">
+                <a href="/recipe/matome/6/recipelist/">
+                  <img class="p-childrenCarousel__image" src="/i/R1/img/dish/1/S20190825037005A_000.jpg?w=450" alt="毎日がラクになるカンタン作りおき">
+                  <span class="p-childrenCarousel__title">カンタン<br>作りおき</span>
+                  <span class="p-childrenCarousel__count c-count">235品</span>
+                </a>
+              </li>
+        
+    
+        
+              <li class="p-childrenCarousel__item">
+                <a href="/recipe/matome/7/recipelist/">
+                  <img class="p-childrenCarousel__image" src="/i/R1/img/dish/1/S20210325078004A_000.jpg?w=450" alt="シンプル定番お弁当で毎日がラクに">
+                  <span class="p-childrenCarousel__title">シンプル<br>定番弁当</span>
+                  <span class="p-childrenCarousel__count c-count">178品</span>
+                </a>
+              </li>
+        
+    
+        
+              <li class="p-childrenCarousel__item">
+                <a href="/recipe/matome/5/recipelist/">
+                  <img class="p-childrenCarousel__image" src="/i/R1/img/dish/1/S20201225048002A_000.jpg?w=450" alt="買い物いらずでラクウマ！">
+                  <span class="p-childrenCarousel__title">買い物<br>いらず</span>
+                  <span class="p-childrenCarousel__count c-count">219品</span>
+                </a>
+              </li>
+        
+    
+        
+              <li class="p-childrenCarousel__item">
+                <a href="/recipe/matome/4/recipelist/">
+                  <img class="p-childrenCarousel__image" src="/i/R1/img/dish/1/S20200325007001A1_000.jpg?w=450" alt="レンチンで完成！">
+                  <span class="p-childrenCarousel__title">レンチン<br>完成</span>
+                  <span class="p-childrenCarousel__count c-count">235品</span>
+                </a>
+              </li>
+        
+    
+            </ul>
+            <!-- /.p-childrenCarousel -->
+          </div>
+
+          <div class="c-buttonGroup">
+            <a href="/recipe/" class="c-buttonGroup__item c-button">レシピをもっと見る</a>
+            <!-- /.c-buttonGroup -->
+          </div>
+        </div>
+        <!-- /.p-mainvisual -->
+      </div>
+
+      <div class="l-contents l-contents--gray">
+        <div class="l-contents__inner">
+          <section class="p-items p-items--wide">
+            <div class="c-heading">
+              <p class="c-heading__catch">息抜きしたい…<i class="c-icon c-icon--ase" aria-hidden="true"></i></p>
+              <h2 class="c-heading__title">新着読みもの</h2>
+              <!-- /.c-heading -->
+            </div>
+
+            <div class="p-items__frame">
+              <ul class="p-items__list p-items__list--2col">
+
+                <li class="p-items__item c-item">
+                  <a href="/news/article/1218648/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1218648/13546152.jpg?w=200" alt="秋においしい「鮭」を使ったほかほかご飯レシピ2品">
+                    </figure>
+                    <div class="c-item__main">
+
+                      <div class="c-item__category">#食</div>
+                      <p class="c-item__title">秋においしい「鮭」を使ったほかほかご飯レシピ2品</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item">
+                  <a href="/news/article/1217239/display/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1217239/13517172.jpg?w=200" alt="太陽系の中で最も大きな「木星」。地球2個分の巨大台風が存在している!?">
+                    </figure>
+                    <div class="c-item__main">
+
+                      <div class="c-item__category">#趣味</div>
+                      <p class="c-item__title">太陽系の中で最も大きな「木星」。地球2個分の巨大台風が存在している!?</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item">
+                  <a href="/news/article/1217480/display/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1217480/13522630.jpg?w=200" alt="「今日はおしゃべりが楽しい」更年期に苦しむ女性の闇が晴れていったわけ／私の生理のしまい方（5）">
+                    </figure>
+                    <div class="c-item__main">
+
+                      <div class="c-item__category">#趣味</div>
+                      <p class="c-item__title">「今日はおしゃべりが楽しい」更年期に苦しむ女性の闇が晴れていったわけ／私の生理のしまい方（5）</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item">
+                  <a href="/news/article/1218318/display/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1218318/13537120.jpg?w=200" alt="【下半身の巡り改善】股関節まわりの老廃物を流す「おしりのばし」">
+                    </figure>
+                    <div class="c-item__main">
+
+                      <div class="c-item__category">#美容・健康</div>
+                      <p class="c-item__title">【下半身の巡り改善】股関節まわりの老廃物を流す「おしりのばし」</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item">
+                  <a href="/news/article/1220101/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1220101/13573701.jpg?w=200" alt="今年最高のKドラマ『ソンジェ背負って走れ』ピョン・ウソク世界的ブレイクまでの長い道のり">
+                    </figure>
+                    <div class="c-item__main">
+
+                      <div class="c-item__category">#趣味</div>
+                      <p class="c-item__title">今年最高のKドラマ『ソンジェ背負って走れ』ピョン・ウソク世界的ブレイクまでの長い道のり</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item">
+                  <a href="/news/article/1215057/display/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1215057/13469048.jpg?w=200" alt="「ここにいたのか…」彼女を想って管理人室でしみじみ／夕暮れのあなたは、少し首をかしげて2（4）">
+                    </figure>
+                    <div class="c-item__main">
+
+                      <div class="c-item__category">#趣味</div>
+                      <p class="c-item__title">「ここにいたのか…」彼女を想って管理人室でしみじみ／夕暮れのあなたは、少し首をかしげて2（4）</p>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="c-buttonGroup">
+              <a href="/news/" class="c-buttonGroup__item c-button">新着読みものをもっと見る</a>
+              <!-- /.c-buttonGroup -->
+            </div>
+            <!-- /.p-items -->
+          </section>
+          <!-- /.l-contents -->
+        </div>
+      </div>
+    
+
+    
+                <div class="l-contents"><div class="l-contents__inner" style="max-width:1080px;text-align:center;">
+  <div class="p-ad">
+    <div class="p-ad__items">
+      <div class="p-ad__item">
+        <div style="text-align:center;">
+          <!-- Ad LCN BB -->
+          <div id="lcn_all_bb_gam">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_bb_gam'); });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- /.p-ad --></div>
+<!-- /.l-contents --></div></div>
+            
+
+    
+
+    
+        
+
+<!-- 編集部誘導枠1 -->
+<div class="l-contents l-contents--gray l-contents--narrow"><div class="l-contents__inner">
+  <section class="p-items">
+    <div id="logly-lift-4293819"></div>
+    <div id="logly-lift-4293820"></div>
+    <script>
+    if (window.innerWidth < 768) {
+    var _lgy_lw = document.createElement("script");
+        _lgy_lw.type = "text/javascript";
+        _lgy_lw.charset = "UTF-8";
+        _lgy_lw.async = true;
+        _lgy_lw.src= (("https:" == document.location.protocol) ? "https://" : "http://")+"l.logly.co.jp/lift_widget.js?adspot_id=4293820";
+        var _lgy_lw_0 = document.getElementsByTagName("script")[0];
+        _lgy_lw_0.parentNode.insertBefore(_lgy_lw, _lgy_lw_0);
+    } else {
+    var _lgy_lw = document.createElement("script");
+        _lgy_lw.type = "text/javascript";
+        _lgy_lw.charset = "UTF-8";
+        _lgy_lw.async = true;
+        _lgy_lw.src= (("https:" == document.location.protocol) ? "https://" : "http://")+"l.logly.co.jp/lift_widget.js?adspot_id=4293819";
+        var _lgy_lw_0 = document.getElementsByTagName("script")[0];
+        _lgy_lw_0.parentNode.insertBefore(_lgy_lw, _lgy_lw_0);
+    }
+    </script>
+  <!-- /.p-items --></section>
+<!-- /.l-contents --></div></div>
+    
+
+      <div class="l-contents l-contents--gray">
+        <div class="l-contents__inner">
+          <section class="p-items p-items--wide">
+            <div class="c-heading">
+              <p class="c-heading__catch">フレンズがレポート<i class="c-icon c-icon--star" aria-hidden="true"></i></p>
+              <h2 class="c-heading__title">新着「フレンズ」レポ </h2>
+              <!-- /.c-heading -->
+            </div>
+
+            <div class="p-items__frame">
+              <ul class="p-items__list p-items__list--2col">
+
+                <li class="p-items__item c-item c-item--article">
+                  <a href="/weblettuce/article/1216282/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1216282/13494476.jpg?w=200" alt="10分で完成！100均材料を組み合わせて作る大人シックなハロウィンアレンジ♪">
+
+                    </figure>
+                    <div class="c-item__main">
+                      <div class="c-item__avatar">
+                        <span class="c-item__icon"><img src="/i/R1/img/v2/weblettuce/member/SiGMdcRI2VU6nZRIrW.jpg?w=100" alt="Mily"></span>
+
+                        <span class="c-item__name">Mily</span>
+                      </div>
+                      <p class="c-item__title">10分で完成！100均材料を組み合わせて作る大人シックなハロウィンアレンジ♪</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item c-item--article">
+                  <a href="/weblettuce/article/1218158/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1218158/13534334.jpg?w=200" alt="30代までとは異なるこの不調…噂に聞くアレがやってきた？！チェックリストをやってみた！">
+
+                    </figure>
+                    <div class="c-item__main">
+                      <div class="c-item__avatar">
+                        <span class="c-item__icon"><img src="/i/R1/img/v2/weblettuce/member/chokko.jpg?w=100" alt="ちょっ子"></span>
+
+                        <span class="c-item__name">ちょっ子</span>
+                      </div>
+                      <p class="c-item__title">30代までとは異なるこの不調…噂に聞くアレがやってきた？！チェックリストをやってみた！</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item c-item--article">
+                  <a href="/weblettuce/article/1216652/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1216652/13502833.jpg?w=200" alt="忘れかけていた感覚が蘇った！気持ちがアガる、ここちいいブラに大満足">
+
+                    </figure>
+                    <div class="c-item__main">
+                      <div class="c-item__avatar">
+                        <span class="c-item__icon"><img src="/i/R1/img/v2/weblettuce/member/ctm7c3GYqR3lJmdXIz.JPG?w=100" alt="冷え田やっこ"></span>
+
+                        <span class="c-ad__pr">PR</span>
+
+                        <span class="c-item__name">冷え田やっこ</span>
+                      </div>
+                      <p class="c-item__title">忘れかけていた感覚が蘇った！気持ちがアガる、ここちいいブラに大満足</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item c-item--article">
+                  <a href="/weblettuce/article/1213045/">
+                    <figure class="c-item__thumbnail">
+                      <img src="/i/N1/1213045/13428476.jpg?w=200" alt="「買いすぎて大反省」アラフィフが1,000円台プチプラアクセサリーを大量買い！で、元はとれた？">
+
+                    </figure>
+                    <div class="c-item__main">
+                      <div class="c-item__avatar">
+                        <span class="c-item__icon"><img src="/i/R1/img/v2/weblettuce/member/poteko_shusei0403.jpg?w=100" alt="ポテコ"></span>
+
+                        <span class="c-item__name">ポテコ</span>
+                      </div>
+                      <p class="c-item__title">「買いすぎて大反省」アラフィフが1,000円台プチプラアクセサリーを大量買い！で、元はとれた？</p>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="c-buttonGroup">
+              <a href="/weblettuce/" class="c-buttonGroup__item c-button">フレンズ記事をもっと見る</a>
+              <!-- /.c-buttonGroup -->
+            </div>
+            <!-- /.p-items -->
+          </section>
+    
+
+    
+      <div class="l-contents">
+        <div class="l-contents__inner">
+          <section class="p-stafflist">
+            <div class="c-heading">
+              <h2 class="c-heading__title">ピックアップフレンズ</h2>
+              <!-- /.c-heading -->
+            </div>
+            <ul class="p-stafflist__list">
+        
+        
+              <li class="p-stafflist__item">
+                <a href="/weblettuce/member/131/">
+                  <div class="p-stafflist__avatar"><img src="/i/R1/img/v2/weblettuce/member/J8P8UE7x3Lvy0PyI5S.jpg?w=300" alt="なこ"></div>
+                  <div class="p-stafflist__name">なこ</div>
+                </a>
+              </li>
+        
+              <li class="p-stafflist__item">
+                <a href="/weblettuce/member/172/">
+                  <div class="p-stafflist__avatar"><img src="/i/R1/img/v2/weblettuce/member/U7adQTwnFY37BkkcdP.jpg?w=300" alt="miki"></div>
+                  <div class="p-stafflist__name">miki</div>
+                </a>
+              </li>
+        
+              <li class="p-stafflist__item">
+                <a href="/weblettuce/member/120/">
+                  <div class="p-stafflist__avatar"><img src="/i/R1/img/v2/weblettuce/member/vFCOWa7f2TPylPFo6g.JPG?w=300" alt="海老原葉月"></div>
+                  <div class="p-stafflist__name">海老原葉月</div>
+                </a>
+              </li>
+        
+              <li class="p-stafflist__item">
+                <a href="/weblettuce/member/146/">
+                  <div class="p-stafflist__avatar"><img src="/i/R1/img/v2/weblettuce/member/BI7D1Ri3peUsBSwdcH.JPG?w=300" alt="まあち"></div>
+                  <div class="p-stafflist__name">まあち</div>
+                </a>
+              </li>
+        
+            </ul>
+            <div class="c-buttonGroup">
+              <a href="/weblettuce/member/" class="c-buttonGroup__item c-button">フレンズ一覧</a>
+              <!-- /.c-buttonGroup -->
+            </div>
+            <!-- /.p-stafflist -->
+          </section>
+          <!-- /.l-contents -->
+        </div>
+      </div>
+    
+
+            <!-- /.p-stafflist -->
+        </div>
+      </div>
+
+    
+    
+
+    
+        <div class="l-contents l-contents--w680 l-contents--gray"><div class="l-contents__inner">
+  <div class="c-heading">
+    <h2 class="c-heading__title">おすすめ読みもの(PR)</h2>
+  <!-- /.c-heading --></div>
+
+  <div class="p-ad">
+    <div class="p-ad__frame">
+          <!-- Ad LCN IaT1 -->
+          <div id="lcn_all_iat1_gam" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); margin-bottom: 15px">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_iat1_gam'); });
+            </script>
+          </div>
+          <!-- Ad LCN IaT2 -->
+          <div id="lcn_all_iat2_gam" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); margin-bottom: 15px">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_iat2_gam'); });
+            </script>
+          </div>
+          <!-- Ad LCN IaT3 -->
+          <div id="lcn_all_iat3_gam" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); margin-bottom: 15px">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_iat3_gam'); });
+            </script>
+          </div>
+          <!-- Ad LCN IaT4 -->
+          <div id="lcn_all_iat4_gam" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); margin-bottom: 15px">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_iat4_gam'); });
+            </script>
+          </div>
+          <!-- Ad LCN IaT5 -->
+          <div id="lcn_all_iat5_gam" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); margin-bottom: 15px">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_iat5_gam'); });
+            </script>
+          </div>
+          <!-- Ad LCN IaT6 -->
+          <div id="lcn_all_iat6_gam" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); margin-bottom: 15px">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_iat6_gam'); });
+            </script>
+          </div>
+          <!-- Ad LCN IaT7 -->
+          <div id="lcn_all_iat7_gam" style="box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); margin-bottom: 15px">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_iat7_gam'); });
+            </script>
+          </div>
+    </div>
+  <!-- /.p-ad --></div>
+<!-- /.l-contents --></div></div>
+        
+    
+
+    
+
+    
+        
+
+<!-- 編集部誘導枠2 -->
+<div class="l-contents l-contents--gray l-contents--narrow"><div class="l-contents__inner">
+  <section class="p-items">
+    <div id="logly-lift-4294695"></div>
+    <div id="logly-lift-4294696"></div>
+    <script>
+    if (window.innerWidth < 768) {
+    var _lgy_lw = document.createElement("script");
+        _lgy_lw.type = "text/javascript";
+        _lgy_lw.charset = "UTF-8";
+        _lgy_lw.async = true;
+        _lgy_lw.src= (("https:" == document.location.protocol) ? "https://" : "http://")+"l.logly.co.jp/lift_widget.js?adspot_id=4294696";
+        var _lgy_lw_0 = document.getElementsByTagName("script")[0];
+        _lgy_lw_0.parentNode.insertBefore(_lgy_lw, _lgy_lw_0);
+    } else {
+    var _lgy_lw = document.createElement("script");
+        _lgy_lw.type = "text/javascript";
+        _lgy_lw.charset = "UTF-8";
+        _lgy_lw.async = true;
+        _lgy_lw.src= (("https:" == document.location.protocol) ? "https://" : "http://")+"l.logly.co.jp/lift_widget.js?adspot_id=4294695";
+        var _lgy_lw_0 = document.getElementsByTagName("script")[0];
+        _lgy_lw_0.parentNode.insertBefore(_lgy_lw, _lgy_lw_0);
+    }
+    </script>
+  <!-- /.p-items --></section>
+<!-- /.l-contents --></div></div>
+    
+
+    
+
+    
+        
+
+
+<div class="l-contents l-contents--gray" id="ranking-news"><div class="l-contents__inner">
+  <section class="p-items">
+    <div class="c-heading">
+      <h2 class="c-heading__title">読みものランキング</h2>
+    <!-- /.c-heading --></div>
+
+    <div class="p-items__frame">
+      <ol class="p-items__list">
+
+        <li class="p-items__item c-item c-item--ranking"><a href="/news/article/1212766/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-gold.svg" alt="1">
+            
+            <span class="c-item__number">1</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/N1/1212766/13505449.jpg?w=200&h=200" alt="40〜60代女性の身体の不調、更年期世代の心境の変化を赤裸々に描いた「私の生理のしまい方」作者インタビュー">
+          </figure>
+          <div class="c-item__main">
+            
+            <h3 class="c-item__title">40〜60代女性の身体の不調、更年期世代の心境の変化を赤裸々に描いた「私の生理のしまい方」作者インタビュー</h3>
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking"><a href="/news/article/1217852/display/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-silver.svg" alt="2">
+            
+            <span class="c-item__number">2</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/N1/1217852/13528705.jpg?w=200&h=200" alt="本当にいいんですか!? 好きな人に引っ越しを手伝ってもらった上に、家での食事に誘われて／付き合って0日で結婚を決めた2人の話（3）">
+          </figure>
+          <div class="c-item__main">
+            
+            <h3 class="c-item__title">本当にいいんですか!? 好きな人に引っ越しを手伝ってもらった上に、家での食事に誘われて／付き合って0日で結婚を決めた2人の話（3）</h3>
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking"><a href="/news/article/1217820/display/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-bronze.svg" alt="3">
+            
+            <span class="c-item__number">3</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/N1/1217820/13528414.jpg?w=200&h=200" alt="留学準備が難しすぎる！ 去年出会った男性に頼ってみると、本当に優しくて助かりました／付き合って0日で結婚を決めた2人の話（1）">
+          </figure>
+          <div class="c-item__main">
+            
+            <h3 class="c-item__title">留学準備が難しすぎる！ 去年出会った男性に頼ってみると、本当に優しくて助かりました／付き合って0日で結婚を決めた2人の話（1）</h3>
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking"><a href="/news/article/1216073/display/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-other.svg" alt="4">
+            <span class="c-item__number">4</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/N1/1216073/13490323.jpg?w=200&h=200" alt="「申請させてもらえなかった…」生活保護申請が門前払いになったわけ／東京のど真ん中で、生活保護JKだった話（5）">
+          </figure>
+          <div class="c-item__main">
+            
+            <h3 class="c-item__title">「申請させてもらえなかった…」生活保護申請が門前払いになったわけ／東京のど真ん中で、生活保護JKだった話（5）</h3>
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking"><a href="/news/article/1215721/display/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-other.svg" alt="5">
+            <span class="c-item__number">5</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/N1/1215721/13479562.jpg?w=200&h=200" alt="理系の驚くべきこだわり！トートバッグを手で持たない理由とは？／理系の人々（18）">
+          </figure>
+          <div class="c-item__main">
+            
+            <h3 class="c-item__title">理系の驚くべきこだわり！トートバッグを手で持たない理由とは？／理系の人々（18）</h3>
+          </div>
+        </a></li>
+      </ol>
+    </div>
+    <div class="c-buttonGroup">
+      <a href="/news/ranking/" class="c-buttonGroup__item c-button">読みものランキングをもっと見る</a>
+    <!-- /.c-buttonGroup --></div>
+  <!-- /.p-items --></section>
+<!-- /.l-contents --></div></div>
+
+    
+
+    
+<div class="l-contents">
+  <div class="l-contents__inner">
+    <div class="c-heading">
+      <h2 class="c-heading__title">読みものいろいろ</h2>
+    </div><!-- /.c-heading -->
+    <div class="c-links">
+      <ul class="c-links__list">
+        <li class="c-links__item"><a href="/news/all/">すべて</a></li>
+        <li class="c-links__item"><a href="/news/meal/">食</a></li>
+        <li class="c-links__item"><a href="/news/life/">くらし</a></li>
+        <li class="c-links__item"><a href="/news/beauty/">美容・健康</a></li>
+        <li class="c-links__item"><a href="/news/hobby/">趣味</a></li>
+        <li class="c-links__item"><a href="/news/child/">育児・子育て</a></li>
+      </ul>
+    </div><!-- /.c-links -->
+  </div><!-- /.l-contents__inner -->
+</div><!-- /.l-contents -->
+
+    
+
+    
+        <div class="l-contents"><div class="l-contents__inner">
+  <div class="p-ad p-ad--2col" style="margin-bottom: 20px;">
+    <div class="p-ad__items">
+      <div class="p-ad__item">
+        <div style="text-align:center;margin: auto;width: 300px;">
+          <!-- Ad LCN 1R -->
+          <div id="lcn_all_1r_gam" style="width: 300px; height: 250px;">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_1r_gam'); });
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="p-ad__item">
+        <div style="text-align:center;margin: auto;width: 300px;">
+          <!-- Ad LCN 2R -->
+          <div id="lcn_all_2r_gam" style="width: 300px; height: 250px;">
+            <script>
+              googletag.cmd.push(function() { googletag.display('lcn_all_2r_gam'); });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- /.p-ad --></div>
+<!-- /.l-contents --></div></div>
+        
+    
+
+    
+
+    
+        
+
+
+
+<div class="p-present"><div class="p-present__inner">
+  <div class="p-present__head">
+    <div class="p-present__labels"><span class="p-present__label">プレゼント企画</span></div>
+    <h2 class="p-present__heading">プレゼント応募</h2>
+  </div>
+
+  <div class="p-present__item"><a href="/present/">
+    <figure class="p-present__thumbnail"><img src="/asset/img/vendor/spinner.gif" data-original="/i/R1/image/present/2629/eDaH23XhZOKiMMa0vV.jpg?w=300" alt="「ヴェレダ ざくろ ファーミングローション EX」"></figure>
+    <div class="p-present__main">
+      <p class="p-present__text">「ヴェレダ ざくろ ファーミングローション EX」</p>
+      <p class="p-present__desc">うるおい続いて、ハリ、ツヤのある肌に導くエイジングケア化粧水</p>
+    </div>
+  </a></div>
+  <div class="p-present__foot">
+    <div class="p-present__catch">&#92;&#92; メルマガ登録で毎週プレゼント情報が届く &#47;&#47;</div>
+    <div class="p-present__button"><a href="/member/regist/" class="c-button c-button--white">新規会員登録する！！</a></div>
+  </div>
+<!-- /.p-present --></div></div>
+
+    
+
+    
+
+    
+        
+
+
+<div class="p-recommended"><div class="p-recommended__inner">
+  <h2 class="p-recommended__heading">レタスクラブ最新号のイチオシ情報</h2>
+
+  <div class="p-recommended__item"><a href="/magazine/">
+    <figure class="p-recommended__thumbnail"><img src="/asset/img/vendor/spinner.gif" data-original="https://static.kadokawa.co.jp/assets/images/202405/o/d345ca02759d8b2d8d1428c6b3458f6c.jpg" alt="レタスクラブ　’２４　６月号"></figure>
+    <div class="p-recommended__main">
+      <p>にーよん式ダイエット　食事改善編　バランス重視ごはん<br>にーよん式ダイエットの強みは、食べる満足感を得ながら余分な脂肪を「ちぎり捨てる」ように減らせる点。大事なのは食べる量より、何をどれくらい食べるかの「バランス」です！</p>
+    </div>
+  </a></div>
+
+  <div class="p-recommended__button"><a href="/magazine/" class="c-button c-button--white">イチオシ情報をもっと見る</a></div>
+<!-- /.p-recommended --></div></div>
+    
+
+    
+
+    
+        
+
+
+<div class="l-contents l-contents--gray" id="ranking-recipe"><div class="l-contents__inner">
+  <section class="p-items">
+    <div class="c-heading">
+      <h2 class="c-heading__title">レシピランキング</h2>
+    <!-- /.c-heading --></div>
+
+    <div class="p-items__frame">
+      <ol class="p-items__list">
+
+        <li class="p-items__item c-item c-item--ranking-recipe"><a href="/recipe/dish/20670/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-gold.svg" alt="1">
+            
+            <span class="c-item__number">1</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/R1/img/dish/1/S20141125037002A_000.png?w=200&h=200" alt="極上ソース焼きそば【by コウケンテツさん】">
+          </figure>
+          <div class="c-item__main">
+            <p class="c-item__title">極上ソース焼きそば【by コウケンテツさん】</p>
+
+            <p class="c-item__text">主な食材：
+    
+            もやし / 焼きそば用麺
+    
+            </p>
+
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking-recipe"><a href="/recipe/dish/23993/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-silver.svg" alt="2">
+            
+            <span class="c-item__number">2</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/R1/img/dish/1/S20170310053001A_002.jpg?w=200&h=200" alt="電子レンジで簡単温泉卵">
+          </figure>
+          <div class="c-item__main">
+            <p class="c-item__title">電子レンジで簡単温泉卵</p>
+
+            <p class="c-item__text">主な食材：
+    
+            卵(M)
+    
+            </p>
+
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking-recipe"><a href="/recipe/dish/22978/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-bronze.svg" alt="3">
+            
+            <span class="c-item__number">3</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/R1/img/dish/1/S20160410022001A_000.png?w=200&h=200" alt="簡単タコライス">
+          </figure>
+          <div class="c-item__main">
+            <p class="c-item__title">簡単タコライス</p>
+
+            <p class="c-item__text">主な食材：
+    
+            玉ねぎのみじん切り / にんにくのみじん切り
+    
+            </p>
+
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking-recipe"><a href="/recipe/dish/30207/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-other.svg" alt="4">
+            <span class="c-item__number">4</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/R1/img/dish/1/S20200725019001A_000.jpg?w=200&h=200" alt="豚バラとなすのたれつゆ炒め【by 山本ゆりさん】">
+          </figure>
+          <div class="c-item__main">
+            <p class="c-item__title">豚バラとなすのたれつゆ炒め【by 山本ゆりさん】</p>
+
+            <p class="c-item__text">主な食材：
+    
+            なす / 豚バラ薄切り肉
+    
+            </p>
+
+          </div>
+        </a></li>
+        <li class="p-items__item c-item c-item--ranking-recipe"><a href="/recipe/dish/19436/">
+          <div class="c-item__rank">
+            <img src="/asset/img/base/bg-award-badge-other.svg" alt="5">
+            <span class="c-item__number">5</span>
+          </div>
+          <figure class="c-item__thumbnail">
+            <img src="/asset/img/vendor/spinner.gif" data-original="/i/R1/img/dish/1/S20120510012001A_000.png?w=200&h=200" alt="サムギョプサル">
+          </figure>
+          <div class="c-item__main">
+            <p class="c-item__title">サムギョプサル</p>
+
+            <p class="c-item__text">主な食材：
+    
+            キムチ / にんにく
+    
+            </p>
+
+          </div>
+        </a></li>
+      </ol>
+    </div>
+    <div class="c-buttonGroup">
+      <a href="/recipe/ranking/" class="c-buttonGroup__item c-button">レシピランキングをもっと見る</a>
+    <!-- /.c-buttonGroup --></div>
+  <!-- /.p-items --></section>
+<!-- /.l-contents --></div></div>
+    
+
+    
+
+    
+        
+
+
+      <div class="l-contents">
+        <div class="l-contents__inner">
+          <div class="p-items p-items--wide">
+            <div class="c-heading">
+              <h2 class="c-heading__title">料理カテゴリからレシピを探す</h2>
+              <!-- /.c-heading -->
+            </div>
+
+            <div class="p-items__frame">
+              <ul class="p-items__list p-items__list--4col p-items__list--2col-sp">
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l1/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-vegetable.webp" alt="野菜のおかず">
+                    </figure>
+                    <div class="c-item3__title">野菜のおかず</div>
+                    <div class="c-item3__count c-count2">9,161品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l2/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-meat.webp" alt="肉のおかず">
+                    </figure>
+                    <div class="c-item3__title">肉のおかず</div>
+                    <div class="c-item3__count c-count2">8,306品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l3/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-fish.webp" alt="魚介のおかず">
+                    </figure>
+                    <div class="c-item3__title">魚介のおかず</div>
+                    <div class="c-item3__count c-count2">3,776品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l4/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-rice.webp" alt="ごはんもの">
+                    </figure>
+                    <div class="c-item3__title">ごはんもの</div>
+                    <div class="c-item3__count c-count2">2,728品</div>
+                  </a>
+                </li>
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l12/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-noodle.webp" alt="麺">
+                    </figure>
+                    <div class="c-item3__title">麺</div>
+                    <div class="c-item3__count c-count2">1,032品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l6/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-pasta.webp" alt="パスタ・グラタン">
+                    </figure>
+                    <div class="c-item3__title">パスタ・グラタン</div>
+                    <div class="c-item3__count c-count2">1,211品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l7/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-stew.webp" alt="シチュー・スープ・汁物">
+                    </figure>
+                    <div class="c-item3__title">シチュー・スープ・汁物</div>
+                    <div class="c-item3__count c-count2">2,755品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l8/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-salad.webp" alt="サラダ">
+                    </figure>
+                    <div class="c-item3__title">サラダ</div>
+                    <div class="c-item3__count c-count2">2,967品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l20/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-dessert.webp" alt="お菓子">
+                    </figure>
+                    <div class="c-item3__title">お菓子</div>
+                    <div class="c-item3__count c-count2">1,229品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l22/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-bento.webp" alt="お弁当">
+                    </figure>
+                    <div class="c-item3__title">お弁当</div>
+                    <div class="c-item3__count c-count2">268品</div>
+                  </a>
+                </li>
+
+                <li class="p-items__item c-item3">
+                  <a href="/recipe/category/l5/">
+                    <figure class="c-item3__thumbnail">
+                      <img src="/asset/img/base/bg-category-egg.webp" alt="卵・大豆製品">
+                    </figure>
+                    <div class="c-item3__title">卵・大豆製品</div>
+                    <div class="c-item3__count c-count2">2,940品</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="c-buttonGroup">
+              <a href="/recipe/category/" class="c-buttonGroup__item c-button">料理カテゴリをもっと見る</a>
+              <!-- /.c-buttonGroup -->
+            </div>
+            <!-- /.p-items -->
+          </div>
+          <!-- /.l-contents -->
+        </div>
+      </div>
+    
+
+    
+
+    
+        
+
+<div class="l-contents"><div class="l-contents__inner">
+  <section class="c-tags">
+    <div class="c-heading">
+      <h2 class="c-heading__title">旬の食材</h2>
+    <!-- /.c-heading --></div>
+
+    <ul class="c-tags__list">
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/146/" class="c-tag">なす</a></li>
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/94/" class="c-tag">しらす干し</a></li>
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/147/" class="c-tag">栗</a></li>
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/564/" class="c-tag">たちうお</a></li>
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/134/" class="c-tag">ピーマン</a></li>
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/58/" class="c-tag">かつお</a></li>
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/64/" class="c-tag">さんま</a></li>
+
+      <li class="c-tags__listItem"><a href="/recipe/ingredient/140/" class="c-tag">ズッキーニ</a></li>
+
+    </ul>
+  <!-- /.c-tags --></section>
+
+  <div class="c-buttonGroup">
+    <a href="/recipe/ingredient/" class="c-buttonGroup__item c-button">食材一覧</a>
+  <!-- /.c-buttonGroup --></div>
+<!-- /.l-contents --></div></div>
+    
+
+
+        <!-- /.l-main --></main>
+
+
+
+    
+        
+
+<footer class="l-footer"><div class="l-footer__inner">
+    <div class="p-footerlinks">
+      <ul class="p-footerlinks__list">
+        <li class="p-footerlinks__item"><a href="https://www.shop.mainichigahakken.net/shop/pages/privacy.aspx" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+        <li class="p-footerlinks__item"><a href="/company/profile/">運営会社</a></li>
+        <li class="p-footerlinks__item"><a href="/information/kiyaku/">利用規約</a></li>
+        <li class="p-footerlinks__item"><a href="/information/browser/">推奨環境</a></li>
+        <li class="p-footerlinks__item"><a href="https://forms.gle/qouLUd5b46CGaRk38" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+        <li class="p-footerlinks__item"><a href="/information/optout/">利用者情報の<br>外部送信について</a></li>
+        <li class="p-footerlinks__item"><a href="/information/ad/lead/">広告掲載について</a></li>
+        <li class="p-footerlinks__item"><a href="https://mediaguide.kadokawa.co.jp/media/?id=62" target="_blank" rel="noopener noreferrer">媒体資料</a></li>
+        <li class="p-footerlinks__item"><a href="/news/tp/info_lettuce/">最新トピックス</a></li>
+        <li class="p-footerlinks__item"><a href="/information/about/">レタスクラブについて</a></li>
+      </ul>
+    <!-- /.p-footerlinks --></div>
+    
+    <div class="p-footersocial u-bg-lightgray">
+      <p class="p-footersocial__text">
+        毎日更新！SNSもチェック！
+      </p>
+      <ul class="p-footersocial__list">
+        <li class="p-footersocial__item">
+          <a href="https://www.facebook.com/lettuceclub/" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-facebook.svg" alt="facebook"></a>
+        </li>
+        <li class="p-footersocial__item">
+          <a href="https://twitter.com/lettuce__club" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-x.svg" alt="x"></a>
+        </li>
+        <li class="p-footersocial__item">
+          <a href="https://www.pinterest.jp/weblettucestaff/" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-pinterest.svg" alt="pinterest"></a>
+        </li>
+        <li class="p-footersocial__item">
+          <a href="https://line.me/R/ti/p/%40oa-lettuceclub" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-line.svg" alt="LINE"></a>
+        </li>
+        <li class="p-footersocial__item">
+          <a href="https://www.instagram.com/lettuce_official/" target="_blank" rel="noopener noreferrer"><img src="/asset/img/p-menu/icon-insta.svg" alt="instagram"></a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.p-footersocial -->
+
+    <small class="p-copyright">レタスクラブ &copy; Mainichi ga Hakken inc.</small>
+  <!-- /.l-footer --></div></footer>
+    
+
+
+
+
+
+    
+
+    
+        <div class="p-adFooter"><div class="p-adFooter__inner">
+  <div style="text-align:center;">
+    <!-- Ad LCN OL -->
+    <div id="lcn_all_ol_gam">
+      <script>
+        googletag.cmd.push(function() { googletag.display('lcn_all_ol_gam'); });
+      </script>
+    </div>
+  </div>
+<!-- /.p-adFooter --></div></div>
+        
+    
+
+
+
+
+        <script src="/asset/js/vendor/jquery_27932027.js"></script>
+        <script src="/asset/js/vendor/jquery.ba-throttle-debounce.min_27932030.js"></script>
+        <script src="/asset/js/vendor/ofi.min_27932031.js"></script>
+        <script src="/asset/js/vendor/owl.carousel.min_27932030.js"></script>
+        <script src="/asset/js/vendor/jquery.lazyload.min_27932032.js"></script>
+        <script src="/asset/js/vendor/clipboard.min_27932035.js"></script>
+        <script src="/asset/js/vendor/slick.min_27932025.js"></script>
+
+
+
+
+
+        <script src="/asset/js/app_28617429.js"></script>
+
+
+
+
+
+
+    <!-- /.l-page --></div>
+
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "https://www.lettuceclub.net/",
+        "name": "レタスクラブ"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

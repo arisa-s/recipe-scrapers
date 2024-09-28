@@ -19,4 +19,10 @@ class Kurashiru(AbstractScraper):
         return cleaned_title
 
     def ingredient_groups(self) -> List[IngredientGroup]:
-        return group_ingredients_jp(self.soup, "ingredient-list-item", "group-title")
+        return group_ingredients_jp(
+            self.soup,
+            "ingredient-list",
+            "group-title",
+            "group-item",
+            "ingredient-quantity-amount",
+        )

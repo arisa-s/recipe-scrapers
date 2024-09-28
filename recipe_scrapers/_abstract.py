@@ -9,7 +9,7 @@ from recipe_scrapers.__version__ import __version__
 from recipe_scrapers.settings import settings
 
 from ._exceptions import ElementNotFoundInHtml
-from ._grouping_utils import IngredientGroup
+from ._grouping_utils import IngredientGroup, group_ingredients_by_starting_char
 from ._opengraph import OpenGraph
 from ._schemaorg import SchemaOrg
 
@@ -100,7 +100,7 @@ class AbstractScraper:
 
     def ingredient_groups(self) -> List[IngredientGroup]:
         """List of ingredient groups."""
-        return [IngredientGroup(purpose=None, ingredients=self.ingredients())]
+        return group_ingredients_by_starting_char(self.ingredients(), self.language())
 
     def instructions(self) -> str:
         """Instructions to prepare the recipe."""
