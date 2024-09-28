@@ -1,3 +1,4 @@
+import re
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Dict, List, Optional
@@ -138,3 +139,68 @@ def group_ingredients(
         for heading, items in groupings.items()
         if items != []
     ]
+
+
+def get_marker(ingredient: str) -> Optional[str]:
+    """Checks if the ingredient starts with a marker like (A), (B), etc."""
+    match = re.match(r"^\([A-Za-z0-9]+\)", ingredient)
+    return match.group(0) if match else None
+
+
+def is_non_japanese_character(first_char: str) -> bool:
+    """Checks if the first character is not Kanji, Hiragana, or Katakana."""
+    return bool(
+        re.search(
+            r"^[^\u4E00-\u9FAF\u3040-\u309F\u30A0-\u30FF\uFF66-\uFF9F]", first_char
+        )
+    )
+
+
+def group_ingredients_jp(
+    soup, ingredient_selector: str, purpose_selector: str
+) -> List[IngredientGroup]:
+    """
+    Groups ingredients based on purpose markers, non-Japanese characters, or no markers.
+
+    :param soup: BeautifulSoup object representing the page content.
+    :param ingredient_selector: CSS class or tag for selecting ingredients.
+    :param purpose_selector: CSS class for selecting ingredient group purposes.
+    :return: List of IngredientGroup objects.
+    """
+    group_dict: Dict[Optional[str], IngredientGroup] = {
+        None: IngredientGroup(ingredients=[], purpose=None)
+    }
+    current_purpose: Optional[str] = None
+
+    for li in soup.find_all("li", class_=ingredient_selector):
+        if purpose_selector in li.get("class", []):
+            purpose = normalize_string(li.get_text())
+            group_dict[purpose] = IngredientGroup(ingredients=[], purpose=purpose)
+            current_purpose = purpose
+        else:
+            ingredient = normalize_string(li.get_text())
+            marker_match = get_marker(ingredient)
+
+            if marker_match:
+                purpose = marker_match
+                if purpose not in group_dict:
+                    group_dict[purpose] = IngredientGroup(
+                        ingredients=[], purpose=purpose
+                    )
+                group_dict[purpose].ingredients.append(ingredient)
+            else:
+                first_char = ingredient[0]
+                if is_non_japanese_character(first_char):
+                    purpose = first_char
+                    if purpose not in group_dict:
+                        group_dict[purpose] = IngredientGroup(
+                            ingredients=[], purpose=purpose
+                        )
+                    group_dict[purpose].ingredients.append(ingredient)
+                else:
+                    group_dict[current_purpose].ingredients.append(ingredient)
+
+    if not group_dict[None].ingredients:
+        del group_dict[None]
+
+    return list(group_dict.values())
