@@ -58,7 +58,10 @@ class Nadia(AbstractScraper):
         ).find_all("li")
         return [normalize_string(ingredient.text) for ingredient in ingredients]
 
-    def instructions(self):
+    def instructions(self) -> str:
+        return "\n".join(self.instructions_list())
+
+    def instructions_list(self):
         instructions_container = self.soup.find(
             "ul", class_=re.compile(r"^CookingProcess_list")
         )
