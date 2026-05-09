@@ -1,14 +1,44 @@
 {
-  "author": "",
-  "canonical_url": "",
-  "site_name": "",
+  "author": "macaroni 料理家　えも",
+  "canonical_url": "https://macaro-ni.jp/90005",
+  "site_name": "Macaroni",
   "host": "macaro-ni.jp",
-  "language": "",
-  "title": "",
-  "ingredients": "",
-  "instructions_list": "",
-  "yields": "",
-  "description": "",
-  "total_time": "",
-  "image": ""
+  "language": "ja",
+  "title": "さっぱりヘルシー♪黒ごま豆腐ジェラート",
+  "ingredients": [
+    "絹豆腐 200g",
+    "牛乳 80cc",
+    "黒ねりごま 60g",
+    "砂糖 30g",
+    "きな粉 適量",
+    "ミント 適量"
+  ],
+  "ingredient_groups": [
+    {
+      "ingredients": [
+        "絹豆腐 200g",
+        "牛乳 80cc",
+        "黒ねりごま 60g",
+        "砂糖 30g"
+      ],
+      "purpose": null
+    },
+    {
+      "ingredients": [
+        "きな粉 適量",
+        "ミント 適量"
+      ],
+      "purpose": "トッピング"
+    }
+  ],
+  "instructions": "ジッパー付き保存袋に材料を全て入れ、手でよく揉み込みます。\nホーロー容器にうつし、冷凍庫で2〜3時間冷やし固めます。\n取り出したらスプーンなどでかき混ぜ、柔らかくなったら器に盛り付けます。きな粉をかけてミントをのせたら完成です。",
+  "instructions_list": [
+    "ジッパー付き保存袋に材料を全て入れ、手でよく揉み込みます。",
+    "ホーロー容器にうつし、冷凍庫で2〜3時間冷やし固めます。",
+    "取り出したらスプーンなどでかき混ぜ、柔らかくなったら器に盛り付けます。きな粉をかけてミントをのせたら完成です。"
+  ],
+  "yields": "2 servings",
+  "description": "豆腐とごまでヘルシーに。「黒ごま豆腐ジェラート」のレシピと作り方を動画でご紹介します。豆腐と牛乳でを使って、なめらかでさっぱりとした風味の黒ごまジェラートを作りました。メイン材料4つでとっても簡単。豆腐入りで栄養も取れるので、お子様のおやつにもぴったりなひと品ですよ。",
+  "total_time": 10,
+  "image": "https://cdn.macaro-ni.jp/image/summary/90/90005/jmITpDclp1ua2cWcs4Ghy7gMFz8NI2u2Zpe9gXbW.jpeg?p=1x1"
 }

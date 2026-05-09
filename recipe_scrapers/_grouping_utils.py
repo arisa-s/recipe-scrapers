@@ -289,10 +289,12 @@ def group_ingredients_jp(
                 continue
 
             # Handle quantity-based grouping if there's no quantity
-            if quantity_selector and li.find(class_=quantity_selector).get_text() == "":
-                current_purpose = li_text
-                add_to_group(current_purpose, None)
-                continue
+            if quantity_selector:
+                qty_el = li.find(class_=quantity_selector)
+                if qty_el is not None and qty_el.get_text() == "":
+                    current_purpose = li_text
+                    add_to_group(current_purpose, None)
+                    continue
 
             # Ingredient grouping by class or marker
             ingredient = normalize_string(li.get_text())

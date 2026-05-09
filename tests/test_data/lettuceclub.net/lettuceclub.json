@@ -1,14 +1,34 @@
 {
-  "author": "",
-  "canonical_url": "",
-  "site_name": "",
+  "author": "榎本美沙",
+  "canonical_url": "https://www.lettuceclub.net/recipe/dish/31374/",
+  "site_name": "レタスクラブ",
   "host": "lettuceclub.net",
-  "language": "",
-  "title": "",
-  "ingredients": "",
-  "instructions_list": "",
-  "yields": "",
-  "description": "",
-  "total_time": "",
-  "image": ""
+  "language": "ja",
+  "title": "小松菜ともやしのスープ",
+  "ingredients": [
+    "小松菜…大1/2わ(約150g)",
+    "もやし…1/4袋",
+    "水…2カップ",
+    "とりガラスープの素…小さじ１ 1/2",
+    "塩…小さじ1/4",
+    "こしょう…少々"
+  ],
+  "instructions": "小松菜は4cm長さに切る。\n鍋に水2カップ、とりガラスープの素小さじ１ 1/2を入れて中火にかける。煮立ったらもやし、１を入れて約2分煮る。塩小さじ1/4、こしょう少々を加え、さっと煮る。",
+  "instructions_list": [
+    "小松菜は4cm長さに切る。",
+    "鍋に水2カップ、とりガラスープの素小さじ１ 1/2を入れて中火にかける。煮立ったらもやし、１を入れて約2分煮る。塩小さじ1/4、こしょう少々を加え、さっと煮る。"
+  ],
+  "category": "汁もの",
+  "yields": "2 servings",
+  "description": "シャキシャキ食感の野菜をあっさり味で",
+  "cuisine": "洋食",
+  "nutrients": {
+    "calories": "15 calories"
+  },
+  "image": "https://www.lettuceclub.net/i/R1/img/dish/1/S20201025034002A1_0000.jpg",
+  "keywords": [
+    "榎本美沙",
+    "塩分控えめ",
+    "低カロリー"
+  ]
 }

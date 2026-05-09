@@ -10,6 +10,9 @@ class RakutenRecipe(AbstractScraper):
     def site_name(self):
         return "Rakuten Recipe"
 
+    def language(self):
+        return "ja"
+
     def ingredient_groups(self):
         return group_ingredients_jp(
             self.soup,

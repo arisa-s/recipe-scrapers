@@ -1,8 +1,5 @@
-from typing import List
-
-from recipe_scrapers._grouping_utils import group_ingredients_jp
-
 from ._abstract import AbstractScraper
+from ._grouping_utils import group_ingredients
 
 
 class DelishKitchen(AbstractScraper):
@@ -14,10 +11,9 @@ class DelishKitchen(AbstractScraper):
         return "Delish Kitchen"
 
     def ingredient_groups(self):
-        return group_ingredients_jp(
+        return group_ingredients(
+            self.ingredients(),
             self.soup,
-            "ingredient-list",
-            "ingredient-group__header",
-            None,
-            "ingredient-serving",
+            ".ingredient-group__header",
+            ".ingredient",
         )

@@ -13,6 +13,26 @@ class Macaroni(AbstractScraper):
     def site_name(self):
         return "Macaroni"
 
+    def _html_ingredient_items(self):
+        """Return (purpose, ingredient_text) pairs from the HTML ingredient list."""
+        result = []
+        container = self.soup.find("ul", class_="articleShow__contentsMaterialItems")
+        if not container:
+            return result
+        for li in container.find_all("li", recursive=False):
+            if "articleShow__contentsMateriialItem--groupWrapper" in li.get("class", []):
+                for child in li.find_all("li", class_="articleShow__contentsMateriialItem"):
+                    result.append(normalize_string(child.text))
+            else:
+                result.append(normalize_string(li.text))
+        return result
+
+    def ingredients(self):
+        items = self._html_ingredient_items()
+        if items:
+            return items
+        return super().ingredients()
+
     def ingredient_groups(self):
         group_containers = self.soup.find(
             "li", class_="articleShow__contentsMateriialItem--groupWrapper"
