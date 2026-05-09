@@ -25,7 +25,7 @@ TARGETED_DOMAINS = (
 
 class TestSouschefTargetedScrapers(unittest.TestCase):
     def setUp(self):
-        fixture_dir = pathlib.Path("tests/test_data/souschef_targeted")
+        fixture_dir = pathlib.Path("tests/fixtures/souschef_targeted")
         self.html = (fixture_dir / "generic_recipe.testhtml").read_text()
         self.expected = json.loads((fixture_dir / "generic_recipe.json").read_text())
 
