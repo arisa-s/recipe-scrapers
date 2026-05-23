@@ -24,6 +24,13 @@ function ensureSafeMode(mode) {
   }
 }
 
+function modelForMode(mode) {
+  if (mode === 'fix-draft') {
+    return process.env.CURSOR_FIX_MODEL || process.env.CURSOR_MODEL || 'auto'
+  }
+  return process.env.CURSOR_MODEL || 'auto'
+}
+
 async function main() {
   const mode = input('mode', 'investigate')
   ensureSafeMode(mode)
@@ -50,9 +57,12 @@ async function main() {
     `- Current branch: ${branch}`,
   ].join('\n')
 
+  const modelId = modelForMode(mode)
+  console.log(`Running ${mode} with Cursor model: ${modelId}`)
+
   const result = await Agent.prompt(`${prompt}\n\n${guardrails}`, {
     apiKey: process.env.CURSOR_API_KEY,
-    model: { id: process.env.CURSOR_MODEL || 'auto' },
+    model: { id: modelId },
     local: { cwd: process.cwd() },
   })
 

@@ -53,6 +53,7 @@ jobs:
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           CURSOR_MODEL: ${{ vars.CURSOR_MODEL || 'auto' }}
+          CURSOR_FIX_MODEL: ${{ vars.CURSOR_FIX_MODEL || vars.CURSOR_MODEL || 'auto' }}
           INPUT_MODE: ${{ steps.mode.outputs.mode }}
           INPUT_ISSUE_URL: ${{ inputs['issue-url'] || github.event.issue.html_url }}
         run: node .github/scripts/run-cursor-sentry-workflow.mjs
