@@ -1,0 +1,58 @@
+name: Sentry Cursor Automation
+
+on:
+  issues:
+    types: [opened, labeled, edited]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "investigate, dedupe, fix-draft, or verify"
+        required: true
+        default: investigate
+      issue-url:
+        description: "GitHub or Sentry issue URL"
+        required: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  cursor-sentry:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'sentry') ||
+      startsWith(github.event.comment.body, '/sentry-')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Cursor SDK
+        run: npm install --no-save @cursor/sdk
+      - name: Resolve mode
+        id: mode
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          LABEL_NAME: ${{ github.event.label.name }}
+          DISPATCH_MODE: ${{ inputs.mode }}
+        run: |
+          mode="${DISPATCH_MODE:-investigate}"
+          if [[ "$COMMENT_BODY" == /sentry-dedupe* ]]; then mode="dedupe"; fi
+          if [[ "$COMMENT_BODY" == /sentry-fix-draft* ]]; then mode="fix-draft"; fi
+          if [[ "$COMMENT_BODY" == /sentry-verify* ]]; then mode="verify"; fi
+          if [[ "$LABEL_NAME" == "sentry:dedupe" ]]; then mode="dedupe"; fi
+          if [[ "$LABEL_NAME" == "sentry:fix-draft" ]]; then mode="fix-draft"; fi
+          if [[ "$LABEL_NAME" == "deployed" ]]; then mode="verify"; fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+      - name: Run Cursor workflow
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CURSOR_MODEL: ${{ vars.CURSOR_MODEL || 'auto' }}
+          INPUT_MODE: ${{ steps.mode.outputs.mode }}
+          INPUT_ISSUE_URL: ${{ inputs['issue-url'] || github.event.issue.html_url }}
+        run: node .github/scripts/run-cursor-sentry-workflow.mjs

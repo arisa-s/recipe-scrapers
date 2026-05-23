@@ -1,0 +1,78 @@
+- name: sentry
+  color: "5319e7"
+  description: Production issue or PR linked to Sentry
+- name: ai-fix-candidate
+  color: "0e8a16"
+  description: Cursor automation may prepare a draft fix
+- name: sentry:investigate
+  color: "fbca04"
+  description: Run the read-only Sentry investigation prompt
+- name: sentry:dedupe
+  color: "fbca04"
+  description: Run the duplicate/root-cause prompt
+- name: sentry:fix-draft
+  color: "0e8a16"
+  description: Run the draft fix prompt
+- name: needs-investigation
+  color: "fbca04"
+  description: Needs automated Sentry and repo investigation
+- name: needs-human-review
+  color: "d93f0b"
+  description: Human review is required before merge or deploy
+- name: needs-tests
+  color: "b60205"
+  description: Regression or safety tests are missing
+- name: duplicate-root-cause
+  color: "cfd3d7"
+  description: Duplicate symptom of an existing canonical issue
+- name: cross-app
+  color: "1d76db"
+  description: Root cause or symptoms span multiple Souschef apps
+- name: frontend
+  color: "0052cc"
+  description: Expo or shared frontend code
+- name: backend
+  color: "5319e7"
+  description: Rails API code
+- name: flask-service
+  color: "5319e7"
+  description: Flask scraping or AI service code
+- name: recipe-scrapers
+  color: "5319e7"
+  description: Delegated recipe_scrapers fork code
+- name: recipe-import
+  color: "c2e0c6"
+  description: Recipe import pipeline
+- name: ai-search
+  color: "c2e0c6"
+  description: AI search feature
+- name: shopping-list
+  color: "c2e0c6"
+  description: Shopping list feature
+- name: recipe-edit
+  color: "c2e0c6"
+  description: Recipe editing feature
+- name: recipe-save
+  color: "c2e0c6"
+  description: Recipe saving/bookmark feature
+- name: low-risk
+  color: "0e8a16"
+  description: Low review risk
+- name: medium-risk
+  color: "fbca04"
+  description: Medium review risk
+- name: high-risk
+  color: "b60205"
+  description: High review risk; explicit human approval required
+- name: observability
+  color: "bfdadc"
+  description: Telemetry, tags, logs, or diagnostics
+- name: production
+  color: "b60205"
+  description: Production-affecting issue
+- name: deployed
+  color: "0e8a16"
+  description: Human has deployed the fix; verification may run
+- name: verified
+  color: "0e8a16"
+  description: Sentry verification passed after deploy

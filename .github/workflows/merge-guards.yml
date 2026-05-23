@@ -1,0 +1,18 @@
+name: Merge Guards
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled, ready_for_review]
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block PRs missing tests
+        env:
+          LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
+        run: |
+          if echo "$LABELS" | grep -q '"needs-tests"'; then
+            echo "Remove the needs-tests label before merge."
+            exit 1
+          fi
