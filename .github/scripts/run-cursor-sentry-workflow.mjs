@@ -51,7 +51,6 @@ async function main() {
   const guardrails = [
     'Automation guardrails:',
     '- Do not merge, deploy, promote, roll back, pause services, restore databases, run production migrations, or change production config.',
-    '- Do not use Sentry Seer.',
     '- Use Railway, Expo, and Supabase MCP tools read-only unless a human explicitly approved a specific write action.',
     '- Create draft PRs only. Human review, merge, and deploy are required.',
     `- Current branch: ${branch}`,

@@ -1,6 +1,6 @@
 Decide whether this Sentry issue is a duplicate/root-cause match for existing GitHub or Sentry issues: {{SENTRY_URL_OR_ID}}.
 
-Do not edit files. Do not use Seer. Use Sentry MCP to compare recent events, tag distributions, releases, request/trace IDs, error_key, feature, endpoint/job, source_domain, and top application stack frames across Expo, Rails, and Flask. Search local repo context only as needed to understand ownership, including `arisa:recipe-scrapers` for web import/parser failures.
+Do not edit files. Use Sentry MCP to compare recent events, tag distributions, releases, request/trace IDs, error_key, feature, endpoint/job, source_domain, and top application stack frames across Expo, Rails, and Flask. Search local repo context only as needed to understand ownership, including `arisa:recipe-scrapers` for web import/parser failures.
 
 If relevant and configured, use supporting MCPs read-only to compare deploy/runtime context:
 - Railway MCP for backend/flask deploys, logs, Redis, and Sidekiq symptoms.

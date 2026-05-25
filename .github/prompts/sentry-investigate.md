@@ -1,6 +1,6 @@
 Investigate this Sentry issue without editing files or creating a branch: {{SENTRY_URL_OR_ID}}.
 
-Use Sentry MCP as the primary source. Do not use Seer. Inspect correlated events across the Expo, Rails, and Flask Sentry projects. Then inspect local repo code as needed, including `arisa:recipe-scrapers` when the issue is a web recipe import or site-specific extraction failure.
+Use Sentry MCP as the primary source. Inspect correlated events across the Expo, Rails, and Flask Sentry projects. Then inspect local repo code as needed, including `arisa:recipe-scrapers` when the issue is a web recipe import or site-specific extraction failure.
 
 If relevant and configured, also use supporting MCPs in read-only mode:
 - Railway MCP for Rails, Redis, Sidekiq, and Flask deployment status/log/runtime context.

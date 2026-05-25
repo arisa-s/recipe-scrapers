@@ -1,6 +1,6 @@
 Autorun a minimal safe draft fix for this canonical Sentry issue: {{GITHUB_ISSUE_OR_SENTRY_URL}}.
 
-First re-run the read-only investigation and duplicate check, including Sentry plus relevant Railway/Expo/Supabase MCP context when configured. Then follow the low-risk AI fix candidate route regardless of risk label: implement the smallest code change that addresses the root cause, add/update a regression test, and make review risk explicit in the PR summary.
+Use the existing canonical issue, investigation notes, duplicate/root-cause decision, and safety plan as the starting point. Fetch fresh Sentry or supporting MCP context only when the existing issue lacks the metadata needed to make a safe fix. Then follow the low-risk AI fix candidate route regardless of risk label: implement the smallest code change that addresses the root cause, add/update a regression test, and make review risk explicit in the PR summary.
 
 Requirements:
 - create or update a draft PR only; never merge, deploy, promote, roll back, pause services, restore databases, run production migrations, or change production config

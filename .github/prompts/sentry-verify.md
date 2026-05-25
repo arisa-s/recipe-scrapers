@@ -1,6 +1,6 @@
 Verify the deployed fix for this canonical Sentry issue: {{GITHUB_ISSUE_OR_SENTRY_URL}}.
 
-Use Sentry MCP as the primary source. Do not use Seer. Search production events scoped by the canonical Sentry issue, related issue IDs, release, environment, root-cause key, request/trace metadata, feature, error_key, and source_domain.
+Use Sentry MCP as the primary source. Search production events scoped by the canonical Sentry issue, related issue IDs, release, environment, root-cause key, request/trace metadata, feature, error_key, and source_domain.
 
 If relevant and configured, use supporting MCPs read-only:
 - Railway MCP for deploy status, logs, service metrics, HTTP errors, Redis, and Sidekiq symptoms.
