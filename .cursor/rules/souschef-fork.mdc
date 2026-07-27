@@ -1,0 +1,39 @@
+---
+description: Souschef recipe-scrapers fork conventions for scraper registration, fixtures, tests, and Flask release coordination
+globs: "{recipe_scrapers/**,tests/**,docs/**,pyproject.toml,.flake8,.pre-commit-config.yaml,generate.py,.github/workflows/**}"
+alwaysApply: false
+---
+
+# Souschef Recipe-Scrapers Fork
+
+## Fork Scope
+
+- This repository is the Souschef fork of `hhursev/recipe-scrapers`. Preserve upstream architecture and compatibility unless a Souschef requirement needs a focused extension.
+- Souschef-targeted fallback sites subclass `SiteRecipeFallbackScraper` in `recipe_scrapers/_site_recipe_fallback.py`.
+- Japanese scraper helpers and site-specific behavior must preserve normalized ingredient groups and language metadata expected by Flask.
+
+## Adding or Changing a Scraper
+
+- Register every scraper in `recipe_scrapers/__init__.py` in two places: import the class, then add `Class.host(): Class` to `SCRAPERS`.
+- Prefer schema.org data first. Add narrow, site-specific HTML fallbacks only when structured data is missing or wrong.
+- Avoid broad exception swallowing in new code. A fallback may catch a provider/schema failure only when it has a deterministic alternative.
+- Keep scraper output compatible with the library's `AbstractScraper` contract; Flask is responsible for the final Souschef payload normalization.
+
+## Fixtures and Tests
+
+- Store Souschef-targeted shared fixtures under `tests/fixtures/souschef_targeted`; site fixtures follow the established `tests/test_data/<domain>` structure.
+- Update HTML and expected JSON together. Fixtures must be self-contained; tests do not depend on live sites.
+- Run `unittest-parallel --level test`.
+- Run `pre-commit run --all-files`; configured checks include Black, Flake8, and mypy.
+
+## Flask Release Coordination
+
+Flask currently installs this repository from `main`, not from a pinned revision. A Flask rebuild can therefore resolve a new scraper commit.
+
+For every behavior-changing fork update:
+1. Run tests and pre-commit checks.
+2. Record the resulting full commit SHA in the Flask-side change or deployment notes.
+3. Rebuild Flask and exercise the affected import path end to end.
+4. Confirm the intended SHA was deployed.
+
+Pinning Flask's dependency to a full commit SHA or release tag is recommended follow-up work.
