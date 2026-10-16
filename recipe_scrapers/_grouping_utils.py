@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from collections import defaultdict
 from dataclasses import dataclass
+from typing import Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
@@ -274,7 +275,8 @@ def group_ingredients_jp(
         """Helper function to add ingredient to the correct group."""
         if purpose not in group_dict:
             group_dict[purpose] = IngredientGroup(ingredients=[], purpose=purpose)
-        group_dict[purpose].ingredients.append(ingredient)
+        if ingredient is not None:
+            group_dict[purpose].ingredients.append(ingredient)
 
     ingredients_container = soup.find_all(class_=ingredients_selector)
 
@@ -330,7 +332,8 @@ def group_ingredients_by_starting_char(
         """Helper function to add ingredient to the correct group."""
         if purpose not in group_dict:
             group_dict[purpose] = IngredientGroup(ingredients=[], purpose=purpose)
-        group_dict[purpose].ingredients.append(ingredient)
+        if ingredient is not None:
+            group_dict[purpose].ingredients.append(ingredient)
 
     for ingredient in ingredients:
         marker_match = get_marker(ingredient)

@@ -1,0 +1,63 @@
+name: Sentry Cursor Automation
+
+on:
+  issues:
+    types: [opened, labeled, edited]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "investigate, dedupe, fix-draft, or all"
+        required: true
+        default: investigate
+      issue-url:
+        description: "GitHub or Sentry issue URL"
+        required: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  cursor-sentry:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'sentry') ||
+      startsWith(github.event.comment.body, '/sentry-')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Cursor SDK
+        run: npm install --prefix .github --no-package-lock
+      - name: Resolve mode
+        id: mode
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          LABEL_NAME: ${{ github.event.label.name }}
+          DISPATCH_MODE: ${{ inputs.mode }}
+        run: |
+          mode="${DISPATCH_MODE:-investigate}"
+          if [[ "$COMMENT_BODY" == /sentry-all* ]]; then mode="all"; fi
+          if [[ "$COMMENT_BODY" == /sentry-dedupe* ]]; then mode="dedupe"; fi
+          if [[ "$COMMENT_BODY" == /sentry-fix-draft* ]]; then mode="fix-draft"; fi
+          if [[ "$LABEL_NAME" == "sentry:all" ]]; then mode="all"; fi
+          if [[ "$LABEL_NAME" == "sentry:dedupe" ]]; then mode="dedupe"; fi
+          if [[ "$LABEL_NAME" == "sentry:fix-draft" ]]; then mode="fix-draft"; fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+      - name: Run Cursor workflow
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CURSOR_MODEL: ${{ vars.CURSOR_MODEL || 'auto' }}
+          CURSOR_FIX_MODEL: ${{ vars.CURSOR_FIX_MODEL || vars.CURSOR_MODEL || 'auto' }}
+          SENTRY_ACCESS_TOKEN: ${{ secrets.SENTRY_ACCESS_TOKEN }}
+          SENTRY_BASE_URL: ${{ vars.SENTRY_BASE_URL || 'https://sentry.io' }}
+          GH_TOKEN: ${{ secrets.SENTRY_CURSOR_GITHUB_TOKEN || github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          INPUT_MODE: ${{ steps.mode.outputs.mode }}
+          INPUT_ISSUE_URL: ${{ inputs['issue-url'] || github.event.issue.html_url }}
+        run: node .github/scripts/run-cursor-sentry-workflow.mjs

@@ -1,6 +1,6 @@
 ---
 description: Souschef recipe-scrapers fork conventions for scraper registration, fixtures, tests, and Flask release coordination
-globs: "{recipe_scrapers/**,tests/**,docs/**,pyproject.toml,.flake8,.pre-commit-config.yaml,generate.py,.github/workflows/**}"
+globs: "{recipe_scrapers/**,tests/**,docs/**,pyproject.toml,.flake8,.pre-commit-config.yaml,generate.py,.github/**}"
 alwaysApply: false
 ---
 
@@ -37,3 +37,17 @@ For every behavior-changing fork update:
 4. Confirm the intended SHA was deployed.
 
 Pinning Flask's dependency to a full commit SHA or release tag is recommended follow-up work.
+
+## Upstream Sync
+
+- `.github/workflows/upstream-sync.yml` merge-commits `hhursev/recipe-scrapers` `main` into `sync/upstream` every Monday. It never rebases and never merges to `main`.
+- Fork-only paths in `.github/upstream-sync/ours-paths.yml` keep the Souschef version. `recipe_scrapers/__init__.py` imports and `SCRAPERS` are unioned; the same host keeps the fork class. Dual-owned files use a normal 3-way merge.
+- Do not replace `group_ingredients_jp`, `SiteRecipeFallbackScraper`, Japanese host registrations, or the browser-like `HEADERS` user agent while resolving a sync conflict.
+- The sync PR comment states whether the result is safe to merge to `main` for the Flask consumer in `.github/upstream-sync/flask-contract.md`. Flask installs this repo from `main`.
+- Required GitHub secrets and variables are listed in `.github/upstream-sync/README.md`.
+
+## Bug-Fix Agent
+
+- `.github/workflows/sentry-cursor-automation.yml` follows the Flask/Rails Cursor agent setup. Scraper production errors are reported in the Flask Sentry project; file the fork issue with that Sentry URL.
+- Fixes stay in this fork. Do not change Flask or Rails payloads from here. Run the fork invariant, Flask contract, and targeted scraper unit tests before opening a PR.
+- The agent may open a non-draft PR and comment `bugbot run`. It must not merge or deploy.

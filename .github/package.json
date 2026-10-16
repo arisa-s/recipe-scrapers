@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "CI-only deps for Cursor automation workflows (not part of the recipe-scrapers library)",
+  "dependencies": {
+    "@cursor/sdk": "^1.0.21"
+  }
+}
