@@ -1,0 +1,137 @@
+name: Upstream sync
+
+on:
+  schedule:
+    # Monday 08:00 UTC.
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.SYNC_GITHUB_TOKEN || secrets.SENTRY_CURSOR_GITHUB_TOKEN || github.token }}
+      GIT_AUTHOR_NAME: github-actions[bot]
+      GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+      GIT_COMMITTER_NAME: github-actions[bot]
+      GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.SYNC_GITHUB_TOKEN || secrets.SENTRY_CURSOR_GITHUB_TOKEN || github.token }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install package, tests, and linters
+        run: pip install ".[tests,linters]"
+
+      - name: Merge upstream into sync/upstream
+        id: sync
+        run: |
+          python .github/scripts/upstream_sync.py \
+            --summary "${RUNNER_TEMP}/sync-summary.json" \
+            --pr-body "${RUNNER_TEMP}/pr-body.md"
+
+      - name: Format changed files
+        id: precommit
+        if: steps.sync.outputs.changed == 'true'
+        continue-on-error: true
+        run: |
+          set +e
+          git diff --name-only origin/main...HEAD | xargs --no-run-if-empty pre-commit run --files
+          status=$?
+          set -e
+          if ! git diff --quiet; then
+            git add -A
+            git -c commit.gpgsign=false commit -m "style: format upstream merge"
+            set +e
+            git diff --name-only origin/main...HEAD | xargs --no-run-if-empty pre-commit run --files
+            status=$?
+            set -e
+          fi
+          if [ "$status" -ne 0 ]; then
+            echo "status=failure" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          echo "status=success" >> "$GITHUB_OUTPUT"
+
+      - name: Run fork safety tests
+        id: tests
+        if: steps.sync.outputs.changed == 'true'
+        continue-on-error: true
+        run: |
+          python -m unittest \
+            tests.library.test_souschef_fork_invariants \
+            tests.library.test_flask_consumer_contract \
+            tests.library.test_souschef_targeted_scrapers \
+            tests.library.test_upstream_sync_merge
+
+      - name: Render safety report
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          UNITTEST_STATUS: ${{ steps.tests.outcome }}
+          PRECOMMIT_STATUS: ${{ steps.precommit.outcome }}
+        run: |
+          python .github/scripts/upstream_sync.py --render-report \
+            --summary "${RUNNER_TEMP}/sync-summary.json" \
+            --report "${RUNNER_TEMP}/report.md" \
+            --pr-body "${RUNNER_TEMP}/pr-body.md" \
+            --unittest-status "$UNITTEST_STATUS" \
+            --precommit-status "$PRECOMMIT_STATUS"
+
+      - name: Push sync branch and open pull request
+        id: pr
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          if git ls-remote --exit-code --heads origin sync/upstream >/dev/null 2>&1; then
+            git fetch origin sync/upstream
+            git push --force-with-lease origin sync/upstream
+          else
+            git push -u origin sync/upstream
+          fi
+          title="chore(sync): merge upstream recipe-scrapers"
+          existing=$(gh pr list --base main --head sync/upstream --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ] && [ "$existing" != "null" ]; then
+            gh pr edit "$existing" --title "$title" --body-file "${RUNNER_TEMP}/pr-body.md"
+            number="$existing"
+            url=$(gh pr view "$number" --json url --jq .url)
+          else
+            url=$(gh pr create --base main --head sync/upstream --title "$title" --body-file "${RUNNER_TEMP}/pr-body.md")
+            number=$(gh pr view "$url" --json number --jq .number)
+          fi
+          echo "pr_url=$url" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$number" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        if: steps.sync.outputs.changed == 'true'
+        with:
+          node-version: "22"
+
+      - name: Install Cursor SDK
+        if: steps.sync.outputs.changed == 'true'
+        run: npm install --prefix .github --no-package-lock
+
+      - name: Cursor safety report
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CURSOR_MODEL: ${{ vars.CURSOR_MODEL || 'auto' }}
+          PR_NUMBER: ${{ steps.pr.outputs.pr_number }}
+          PR_URL: ${{ steps.pr.outputs.pr_url }}
+          SUMMARY_PATH: ${{ runner.temp }}/sync-summary.json
+          REPORT_PATH: ${{ runner.temp }}/report.md
+        run: node .github/scripts/run-cursor-upstream-sync.mjs

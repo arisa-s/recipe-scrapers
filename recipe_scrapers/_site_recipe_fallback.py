@@ -52,8 +52,15 @@ class SiteRecipeFallbackScraper(AbstractScraper):
     def _first_meta(self, *selectors: tuple[str, dict[str, str]]) -> str | None:
         for name, attrs in selectors:
             tag = self.soup.find(name, attrs)
-            if tag and tag.get("content"):
-                return normalize_string(tag["content"])
+            if not tag:
+                continue
+            content = tag.get("content")
+            if isinstance(content, list):
+                content = next(
+                    (item for item in content if isinstance(item, str)), None
+                )
+            if isinstance(content, str) and content:
+                return normalize_string(content)
         return None
 
     def _select_texts(self, selectors: tuple[str, ...]) -> list[str]:
