@@ -287,6 +287,10 @@ def union_entries(
     seen_keys: dict[str, ScraperEntry] = {}
     seen_hosts: dict[str, str] = {}
 
+    def note(message: str) -> None:
+        if message not in notes:
+            notes.append(message)
+
     def add(entry: ScraperEntry, side: str) -> None:
         key = normalize_src(entry.key_src)
         existing = seen_keys.get(key)
@@ -294,7 +298,7 @@ def union_entries(
             if side == "theirs" and normalize_src(existing.value_src) != normalize_src(
                 entry.value_src
             ):
-                notes.append(
+                note(
                     "Kept fork SCRAPERS value "
                     f"{existing.value_src} for `{entry.key_src}`; "
                     f"upstream had {entry.value_src}."
@@ -305,9 +309,7 @@ def union_entries(
         if class_name is not None and resolve_host is not None:
             host = resolve_host(class_name)
         if host and host in seen_hosts:
-            notes.append(
-                f"Kept {seen_hosts[host]} for host {host}; dropped {entry.value_src}."
-            )
+            note(f"Kept {seen_hosts[host]} for host {host}; dropped {entry.value_src}.")
             return
         seen_keys[key] = entry
         if host:
@@ -699,6 +701,82 @@ def format_bullet_list(items: list[str], empty: str = "none", limit: int = 30) -
     return "\n".join(lines)
 
 
+def is_site_scraper(path: str) -> bool:
+    name = Path(path).name
+    return (
+        path.startswith("recipe_scrapers/")
+        and path.count("/") == 1
+        and name.endswith(".py")
+        and not name.startswith("_")
+        and name != "__init__.py"
+    )
+
+
+def diff_names_filtered(
+    repo: Path,
+    merge_base: str,
+    upstream_sha: str,
+    diff_filter: str,
+) -> list[str]:
+    result = git(
+        repo,
+        [
+            "diff",
+            "--name-only",
+            f"--diff-filter={diff_filter}",
+            merge_base,
+            upstream_sha,
+            "--",
+            "recipe_scrapers",
+        ],
+    )
+    return [line for line in result.stdout.splitlines() if is_site_scraper(line)]
+
+
+def upstream_change_summary(
+    repo: Path,
+    merge_base: str,
+    upstream_sha: str,
+) -> dict[str, list[str]]:
+    subjects_raw = git(
+        repo,
+        ["log", "--reverse", "--pretty=format:%s", f"{merge_base}..{upstream_sha}"],
+    ).stdout
+    return {
+        "subjects": [line for line in subjects_raw.splitlines() if line.strip()],
+        "added_scrapers": diff_names_filtered(repo, merge_base, upstream_sha, "A"),
+        "removed_scrapers": diff_names_filtered(repo, merge_base, upstream_sha, "D"),
+        "modified_scrapers": diff_names_filtered(repo, merge_base, upstream_sha, "M"),
+    }
+
+
+def render_upstream_changes(summary: dict[str, object]) -> str:
+    changes = summary.get("upstream_changes")
+    if not isinstance(changes, dict):
+        return ""
+    return "\n".join(
+        [
+            "## Upstream changes",
+            "",
+            f"{summary.get('upstream_commit_count')} commits on `hhursev/recipe-scrapers` "
+            f"since `{summary.get('merge_base')}`.",
+            "",
+            "### New site scrapers",
+            format_bullet_list(as_str_list(changes.get("added_scrapers"))),
+            "",
+            "### Removed site scrapers",
+            format_bullet_list(as_str_list(changes.get("removed_scrapers"))),
+            "",
+            "### Updated site scrapers",
+            format_bullet_list(as_str_list(changes.get("modified_scrapers")), limit=60),
+            "",
+            "### Commits",
+            format_bullet_list(as_str_list(changes.get("subjects")), limit=80),
+            "",
+        ]
+    )
+
+
 def safe_to_merge_line(verdict: str) -> str:
     if verdict == "SAFE":
         return "yes"
@@ -742,6 +820,7 @@ def render_report(summary: dict[str, object]) -> str:
             f"- unittest: {summary.get('unittest_status')}",
             f"- pre-commit: {summary.get('precommit_status')}",
             "",
+            render_upstream_changes(summary),
             "The Cursor agent may raise this verdict. It may clear a conflict-marker or unittest",
             "failure only after that problem is actually fixed and the unittest command passes.",
             "",
@@ -764,6 +843,8 @@ def render_pr_body(summary: dict[str, object]) -> str:
             "- Strategy: merge commit (`--no-ff`), never rebase. Fork-only paths keep the Souschef version.",
             "",
             "This PR does not auto-merge. Merging to `main` pins this commit and redeploys production Flask.",
+            "",
+            render_upstream_changes(summary).rstrip(),
             "",
             "## Deterministic resolution",
             "",
@@ -972,6 +1053,7 @@ def sync_command(args: argparse.Namespace) -> int:
         "merge_base": merge_base,
         "merge_sha": merge_sha,
         "upstream_commit_count": int(commit_count or "0"),
+        "upstream_changes": upstream_change_summary(repo, merge_base, upstream_sha),
         "kept_ours": result["kept_ours"],
         "init_notes": result["init_notes"],
         "unresolved_conflicts": result["unresolved_conflicts"],
