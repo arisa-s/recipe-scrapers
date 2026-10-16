@@ -126,6 +126,43 @@ class TestUpstreamSyncMerge(unittest.TestCase):
         self.assertEqual([entry.value_src for entry in entries], ["Kurashiru"])
         self.assertTrue(any("kurashiru.com" in note for note in notes))
 
+    def test_pr_body_summarizes_upstream_scrapers_and_commits(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            run_git(repo, "init", "-b", "main")
+            write_file(repo, "recipe_scrapers/aaa.py", "class Aaa:\n    pass\n")
+            commit_all(repo, "base")
+            base = SYNC.rev(repo, "HEAD")
+            run_git(repo, "checkout", "-b", "upstream-main")
+            write_file(repo, "recipe_scrapers/bbb.py", "class Bbb:\n    pass\n")
+            write_file(
+                repo, "recipe_scrapers/aaa.py", "class Aaa:\n    changed = True\n"
+            )
+            commit_all(repo, "Add Bbb scraper")
+
+            changes = SYNC.upstream_change_summary(repo, base, "upstream-main")
+            body = SYNC.render_pr_body(
+                {
+                    "minimum_verdict": "REVIEW",
+                    "fork_sha": "fork",
+                    "upstream_sha": "upstream",
+                    "merge_base": base,
+                    "upstream_commit_count": 1,
+                    "kept_ours": [],
+                    "init_notes": [],
+                    "unresolved_conflicts": [],
+                    "upstream_changes": changes,
+                }
+            )
+
+        self.assertIn("recipe_scrapers/bbb.py", changes["added_scrapers"])
+        self.assertIn("recipe_scrapers/aaa.py", changes["modified_scrapers"])
+        self.assertEqual(changes["subjects"], ["Add Bbb scraper"])
+        self.assertIn("## Upstream changes", body)
+        self.assertIn("### New site scrapers", body)
+        self.assertIn("recipe_scrapers/bbb.py", body)
+        self.assertIn("Add Bbb scraper", body)
+
     def test_unittest_failure_blocks_an_otherwise_safe_merge(self):
         summary = SYNC.apply_test_results(
             {

@@ -96,6 +96,11 @@ jobs:
       - name: Push sync branch and open pull request
         id: pr
         if: steps.sync.outputs.changed == 'true'
+        env:
+          # git push uses the checkout credential. gh uses the Actions token,
+          # which has pull-requests: write. A PAT that can push workflow files
+          # may still be unable to create a pull request.
+          GH_TOKEN: ${{ github.token }}
         run: |
           if git ls-remote --exit-code --heads origin sync/upstream >/dev/null 2>&1; then
             git fetch origin sync/upstream
