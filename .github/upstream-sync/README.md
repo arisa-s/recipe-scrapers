@@ -8,7 +8,7 @@ Scheduled workflows run only after this setup is on `main` of `arisa-s/recipe-sc
 
 Fork-only paths in `ours-paths.yml` keep the Souschef version. `recipe_scrapers/__init__.py` imports and `SCRAPERS` entries are unioned. The same host keeps the fork class. Other dual-owned files use a normal 3-way merge. Leftover conflict markers stay for the Cursor agent.
 
-The pull request comment `Upstream sync report` says whether the merge is safe to merge to `main` for the Flask consumer described in `flask-contract.md`. Flask installs this repo from `main`, so merging the pull request changes the next Flask rebuild.
+The pull request comment `Upstream sync report` says whether the merge is safe to merge to `main` for the Flask consumer described in `flask-contract.md`. Merging the pull request to `main` pins that commit in `souschef-flask-server` and redeploys production Flask on Railway.
 
 The job force-updates `sync/upstream` from current `main` plus upstream each run. Conflict fixes that are only on that branch are rebuilt the next week. Merge the pull request, or encode a lasting resolution in `ours-paths.yml` / `upstream_sync.py`.
 
@@ -23,6 +23,7 @@ The agent may open a non-draft pull request. It must not merge or deploy. Commen
 - `CURSOR_API_KEY` — Cursor agent for the sync report and bug-fix flow
 - `SENTRY_ACCESS_TOKEN` — Sentry REST API and Sentry MCP for the bug-fix flow
 - `SYNC_GITHUB_TOKEN` or `SENTRY_CURSOR_GITHUB_TOKEN` — push `sync/upstream` and open pull requests when `GITHUB_TOKEN` cannot
+- `FLASK_DEPLOY_KEY` — private half of a write deploy key on `arisa-s/souschef-flask-server`. `deploy-flask.yml` uses it to push the scraper pin that Railway builds
 
 ## Repository variables
 

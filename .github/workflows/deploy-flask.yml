@@ -1,0 +1,91 @@
+name: Deploy Flask
+
+# Pushing this repository to main does not change souschef-flask-server, and
+# Railway only rebuilds that service from the Flask repo. This workflow pins
+# the pushed commit in Flask requirements.txt and pushes Flask main. The Flask
+# service is connected to that branch, so the pin commit is the production
+# deploy. The SHA in the requirement also busts the Nixpacks install cache.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-flask-production
+  cancel-in-progress: false
+
+jobs:
+  pin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install package
+        run: pip install .
+
+      - name: Check the Flask consumer contract
+        run: |
+          python -m unittest \
+            tests.library.test_flask_consumer_contract \
+            tests.library.test_souschef_fork_invariants \
+            tests.library.test_pin_flask_dependency
+
+      - name: Check Flask deploy key
+        env:
+          FLASK_DEPLOY_KEY: ${{ secrets.FLASK_DEPLOY_KEY }}
+        run: |
+          if [ -z "${FLASK_DEPLOY_KEY}" ]; then
+            echo "Set FLASK_DEPLOY_KEY to the private half of a write deploy key on arisa-s/souschef-flask-server."
+            exit 1
+          fi
+
+      - name: Checkout Flask
+        uses: actions/checkout@v4
+        with:
+          repository: arisa-s/souschef-flask-server
+          ref: main
+          path: flask-server
+          ssh-key: ${{ secrets.FLASK_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: Pin recipe-scrapers and push Flask main
+        env:
+          SHA: ${{ github.sha }}
+          GIT_TERMINAL_PROMPT: "0"
+        working-directory: flask-server
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python ../.github/scripts/pin_flask_dependency.py requirements.txt "$SHA"
+            if git diff --quiet -- requirements.txt; then
+              echo "souschef-flask-server already pins ${SHA}"
+              exit 0
+            fi
+            git add requirements.txt
+            git -c commit.gpgsign=false commit \
+              -m "Pin recipe-scrapers to ${SHA}." \
+              -m "Railway rebuilds production Flask when this dependency pin changes."
+            if git push origin HEAD:main; then
+              echo "Pushed recipe-scrapers pin ${SHA}. Railway will rebuild souschef-flask-server."
+              exit 0
+            fi
+            echo "Push rejected, retrying (${attempt}/3)"
+            git reset --hard origin/main
+          done
+          echo "Could not push the recipe-scrapers pin to souschef-flask-server main"
+          exit 1

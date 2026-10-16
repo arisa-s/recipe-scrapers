@@ -21,7 +21,7 @@ If you edit files, commit on `sync/upstream`, push that branch, and rerun:
 
 You may raise the verdict from SAFE to REVIEW or BLOCK. You may clear "unresolved conflict markers" or "unittest failed" only after those problems are actually gone. You may not clear "preservation checks failed" or "__init__.py union failed".
 
-Post one pull request comment that starts with `## Upstream sync report` and includes the final verdict, whether it is safe to merge to `main`, the upstream range, fork-only paths, Flask contract changes, and test results. Flask installs this repository from `main`, so merging changes the next Flask rebuild.
+Post one pull request comment that starts with `## Upstream sync report` and includes the final verdict, whether it is safe to merge to `main`, the upstream range, fork-only paths, Flask contract changes, and test results. Merging to `main` pins that commit in `souschef-flask-server` and redeploys production Flask.
 
 Then comment exactly `bugbot run`.
 

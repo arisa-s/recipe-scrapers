@@ -1,10 +1,12 @@
 # Flask consumer contract
 
-`souschef-flask-server` installs this fork from `main`:
+`souschef-flask-server` installs one pinned commit of this fork:
 
 ```
-git+https://github.com/arisa-s/recipe-scrapers.git@main#egg=recipe_scrapers
+git+https://github.com/arisa-s/recipe-scrapers.git@<commit>#egg=recipe_scrapers
 ```
+
+`.github/workflows/deploy-flask.yml` updates that pin on every push to `main` and pushes `souschef-flask-server` `main`. Railway rebuilds production Flask from that branch.
 
 The web importer in `app/services/recipe_scraper/web/scrape_web_service.py` is the consumer. A weekly sync is safe to merge to `main` only when this surface still behaves the same way.
 

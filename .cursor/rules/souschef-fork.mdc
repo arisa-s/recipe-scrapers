@@ -28,22 +28,19 @@ alwaysApply: false
 
 ## Flask Release Coordination
 
-Flask currently installs this repository from `main`, not from a pinned revision. A Flask rebuild can therefore resolve a new scraper commit.
+Flask installs the commit pinned in `souschef-flask-server` `requirements.txt`. `.github/workflows/deploy-flask.yml` runs on every push to `main`, writes that commit SHA into the pin, and pushes Flask `main`. Railway autodeploys the Flask service from that branch. The SHA change is what makes Nixpacks install the new scraper commit instead of reusing the cached `@main` checkout.
 
 For every behavior-changing fork update:
 1. Run tests and pre-commit checks.
-2. Record the resulting full commit SHA in the Flask-side change or deployment notes.
-3. Rebuild Flask and exercise the affected import path end to end.
-4. Confirm the intended SHA was deployed.
-
-Pinning Flask's dependency to a full commit SHA or release tag is recommended follow-up work.
+2. Merge to `main`. The deploy workflow pins that SHA and Railway rebuilds Flask.
+3. Confirm the Flask deployment was built from the pin commit for that SHA.
 
 ## Upstream Sync
 
 - `.github/workflows/upstream-sync.yml` merge-commits `hhursev/recipe-scrapers` `main` into `sync/upstream` every Monday. It never rebases and never merges to `main`.
 - Fork-only paths in `.github/upstream-sync/ours-paths.yml` keep the Souschef version. `recipe_scrapers/__init__.py` imports and `SCRAPERS` are unioned; the same host keeps the fork class. Dual-owned files use a normal 3-way merge.
 - Do not replace `group_ingredients_jp`, `SiteRecipeFallbackScraper`, Japanese host registrations, or the browser-like `HEADERS` user agent while resolving a sync conflict.
-- The sync PR comment states whether the result is safe to merge to `main` for the Flask consumer in `.github/upstream-sync/flask-contract.md`. Flask installs this repo from `main`.
+- The sync PR comment states whether the result is safe to merge to `main` for the Flask consumer in `.github/upstream-sync/flask-contract.md`. Merging to `main` pins that commit and redeploys Flask.
 - Required GitHub secrets and variables are listed in `.github/upstream-sync/README.md`.
 
 ## Bug-Fix Agent
