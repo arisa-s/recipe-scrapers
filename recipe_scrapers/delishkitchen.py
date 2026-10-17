@@ -7,6 +7,9 @@ class DelishKitchen(AbstractScraper):
     def host(cls):
         return "delishkitchen.tv"
 
+    def site_name(self):
+        return "Delish Kitchen"
+
     def ingredient_groups(self):
         return group_ingredients(
             self.ingredients(),

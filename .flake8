@@ -42,3 +42,5 @@ exclude =
     ./.tox/
     ./.venv/
     ./venv/
+    ./node_modules/
+    ./.github/node_modules/

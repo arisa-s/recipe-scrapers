@@ -1,11 +1,15 @@
 name: publish
 
+# The Souschef fork must not publish to the public recipe-scrapers PyPI
+# project. publish runs only when the PUBLISH_TO_PYPI repository variable
+# is the string true.
 on:
   release:
     types: [published]
 
 jobs:
   publish:
+    if: vars.PUBLISH_TO_PYPI == 'true'
     name: Upload release to PyPI
     runs-on: ubuntu-latest
     environment:

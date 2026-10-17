@@ -1,0 +1,50 @@
+---
+description: Souschef recipe-scrapers fork conventions for scraper registration, fixtures, tests, and Flask release coordination
+globs: "{recipe_scrapers/**,tests/**,docs/**,pyproject.toml,.flake8,.pre-commit-config.yaml,generate.py,.github/**}"
+alwaysApply: false
+---
+
+# Souschef Recipe-Scrapers Fork
+
+## Fork Scope
+
+- This repository is the Souschef fork of `hhursev/recipe-scrapers`. Preserve upstream architecture and compatibility unless a Souschef requirement needs a focused extension.
+- Souschef-targeted fallback sites subclass `SiteRecipeFallbackScraper` in `recipe_scrapers/_site_recipe_fallback.py`.
+- Japanese scraper helpers and site-specific behavior must preserve normalized ingredient groups and language metadata expected by Flask.
+
+## Adding or Changing a Scraper
+
+- Register every scraper in `recipe_scrapers/__init__.py` in two places: import the class, then add `Class.host(): Class` to `SCRAPERS`.
+- Prefer schema.org data first. Add narrow, site-specific HTML fallbacks only when structured data is missing or wrong.
+- Avoid broad exception swallowing in new code. A fallback may catch a provider/schema failure only when it has a deterministic alternative.
+- Keep scraper output compatible with the library's `AbstractScraper` contract; Flask is responsible for the final Souschef payload normalization.
+
+## Fixtures and Tests
+
+- Store Souschef-targeted shared fixtures under `tests/fixtures/souschef_targeted`; site fixtures follow the established `tests/test_data/<domain>` structure.
+- Update HTML and expected JSON together. Fixtures must be self-contained; tests do not depend on live sites.
+- Run `unittest-parallel --level test`.
+- Run `pre-commit run --all-files`; configured checks include Black, Flake8, and mypy.
+
+## Flask Release Coordination
+
+Flask installs the commit pinned in `souschef-flask-server` `requirements.txt`. `.github/workflows/deploy-flask.yml` runs on every push to `main`, writes that commit SHA into the pin, and pushes Flask `main`. Railway autodeploys the Flask service from that branch. The SHA change is what makes Nixpacks install the new scraper commit instead of reusing the cached `@main` checkout.
+
+For every behavior-changing fork update:
+1. Run tests and pre-commit checks.
+2. Merge to `main`. The deploy workflow pins that SHA and Railway rebuilds Flask.
+3. Confirm the Flask deployment was built from the pin commit for that SHA.
+
+## Upstream Sync
+
+- `.github/workflows/upstream-sync.yml` merge-commits `hhursev/recipe-scrapers` `main` into `sync/upstream` every Monday. It never rebases and never merges to `main`.
+- Fork-only paths in `.github/upstream-sync/ours-paths.yml` keep the Souschef version. `recipe_scrapers/__init__.py` imports and `SCRAPERS` are unioned; the same host keeps the fork class. Dual-owned files use a normal 3-way merge.
+- Do not replace `group_ingredients_jp`, `SiteRecipeFallbackScraper`, Japanese host registrations, or the browser-like `HEADERS` user agent while resolving a sync conflict.
+- The sync PR comment states whether the result is safe to merge to `main` for the Flask consumer in `.github/upstream-sync/flask-contract.md`. Merging to `main` pins that commit and redeploys Flask.
+- Required GitHub secrets and variables are listed in `.github/upstream-sync/README.md`.
+
+## Bug-Fix Agent
+
+- `.github/workflows/sentry-cursor-automation.yml` follows the Flask/Rails Cursor agent setup. Scraper production errors are reported in the Flask Sentry project; file the fork issue with that Sentry URL.
+- Fixes stay in this fork. Do not change Flask or Rails payloads from here. Run the fork invariant, Flask contract, and targeted scraper unit tests before opening a PR.
+- The agent may open a non-draft PR and comment `bugbot run`. It must not merge or deploy.

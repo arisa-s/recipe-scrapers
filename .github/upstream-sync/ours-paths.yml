@@ -1,0 +1,60 @@
+# Paths owned by the Souschef fork.
+# fork_only: keep our version when upstream changes the same path.
+# dual_owned: 3-way merge. Never take ours or theirs for the whole file.
+# recipe_scrapers/__init__.py is dual-owned and then unioned by upstream_sync.py.
+
+fork_only:
+  - recipe_scrapers/_utils_jp.py
+  - recipe_scrapers/_site_recipe_fallback.py
+  - recipe_scrapers/kurashiru.py
+  - recipe_scrapers/rakutenrecipe.py
+  - recipe_scrapers/nadia.py
+  - recipe_scrapers/macaroni.py
+  - recipe_scrapers/lettuceclub.py
+  - recipe_scrapers/kikkomanjp.py
+  - recipe_scrapers/dancyu.py
+  - recipe_scrapers/betterhomebase.py
+  - recipe_scrapers/imbibemagazine.py
+  - recipe_scrapers/instructables.py
+  - recipe_scrapers/justapinch.py
+  - recipe_scrapers/kaleforniakravings.py
+  - recipe_scrapers/marionskitchen.py
+  - recipe_scrapers/olivetomato.py
+  - recipe_scrapers/theage.py
+  - recipe_scrapers/thebigtastybite.py
+  - recipe_scrapers/tiffycooks.py
+  - recipe_scrapers/wandercapetown.py
+  - recipe_scrapers/yummylittlebelly.py
+  - tests/library/test_souschef_targeted_scrapers.py
+  - tests/library/test_souschef_fork_invariants.py
+  - tests/library/test_flask_consumer_contract.py
+  - tests/library/test_upstream_sync_merge.py
+  - tests/fixtures/souschef_targeted
+  - tests/test_data/cookpad.com
+  - tests/test_data/delishkitchen.tv
+  - tests/test_data/lettuceclub.net
+  - tests/test_data/macaro-ni.jp
+  - tests/test_data/oceans-nadia.com
+  - tests/test_data/recipe.rakuten.co.jp
+  - .cursor/rules/souschef-fork.mdc
+  - .cursor/mcp.json
+  - .github/scripts/upstream_sync.py
+  - .github/scripts/run-cursor-upstream-sync.mjs
+  - .github/scripts/run-cursor-sentry-workflow.mjs
+  - .github/prompts
+  - .github/upstream-sync
+  - .github/workflows/upstream-sync.yml
+  - .github/workflows/sentry-cursor-automation.yml
+  - .github/workflows/merge-guards.yml
+  - .github/workflows/publish.yaml
+  - .github/package.json
+  - .github/labels.yml
+  - .github/pull_request_template.md
+  - .github/ISSUE_TEMPLATE
+
+dual_owned:
+  - recipe_scrapers/__init__.py
+  - recipe_scrapers/_grouping_utils.py
+  - recipe_scrapers/_abstract.py
+  - recipe_scrapers/cookpad.py
+  - recipe_scrapers/delishkitchen.py
