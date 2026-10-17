@@ -1,0 +1,46 @@
+name: Pin site scraper pull request
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  pin:
+    if: startsWith(github.head_ref, 'site/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pin new site pull request in Slack
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          if [ -z "${SLACK_BOT_TOKEN}" ] || [ -z "${SLACK_CHANNEL_ID}" ]; then
+            echo "Set secret SLACK_BOT_TOKEN and variable SLACK_CHANNEL_ID."
+            echo "The bot needs chat:write and pins:write, and it must be in that channel."
+            exit 1
+          fi
+          payload="$(jq -n \
+            --arg channel "$SLACK_CHANNEL_ID" \
+            --arg text "$(printf 'New recipe website pull request #%s is open.\n%s\n%s' "$PR_NUMBER" "$PR_TITLE" "$PR_URL")" \
+            '{channel:$channel, text:$text, unfurl_links:false}')"
+          response="$(curl -sS -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$payload")"
+          echo "$response" | jq -e '.ok == true' >/dev/null || {
+            echo "$response" | jq -c '{ok,error}'
+            exit 1
+          }
+          timestamp="$(echo "$response" | jq -r '.ts')"
+          pin="$(jq -n --arg channel "$SLACK_CHANNEL_ID" --arg timestamp "$timestamp" '{channel:$channel, timestamp:$timestamp}')"
+          pin_response="$(curl -sS -X POST https://slack.com/api/pins.add \
+            -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$pin")"
+          echo "$pin_response" | jq -e '.ok == true' >/dev/null || {
+            echo "$pin_response" | jq -c '{ok,error}'
+            exit 1
+          }

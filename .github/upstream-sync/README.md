@@ -20,10 +20,26 @@ The agent may open a non-draft pull request. It must not merge or deploy. Commen
 
 ## Repository secrets
 
-- `CURSOR_API_KEY` — Cursor agent for the sync report and bug-fix flow
+- `CURSOR_API_KEY` — Cursor agent for the sync report, bug-fix flow, and `add-site.yml`
 - `SENTRY_ACCESS_TOKEN` — Sentry REST API and Sentry MCP for the bug-fix flow
 - `SYNC_GITHUB_TOKEN` or `SENTRY_CURSOR_GITHUB_TOKEN` — push `sync/upstream` and open pull requests when `GITHUB_TOKEN` cannot
 - `FLASK_DEPLOY_KEY` — private half of a write deploy key on `arisa-s/souschef-flask-server`. `deploy-flask.yml` uses it to push the scraper pin that Railway builds
+- `SLACK_BOT_TOKEN` — Slack bot token with `chat:write` and `pins:write`. Invite the bot to the channel below. `pin-site-pr.yml` posts and pins a message when a pull request is opened from a `site/` branch. Later pushes to that pull request are not pinned again.
+
+## Add a website from Slack
+
+`add-site.yml` can be started from the Actions tab, or from Slack. In Slack, type:
+
+```
+/add-site https://example.com/recipes/pasta
+Ingredients are only in the method, not a list.
+```
+
+The URL is required. The note is optional. If the URL is missing, Slack replies with that template and does not start a run. The slash command posts to Rails `POST /webhooks/slack/add_site`. Rails needs `SLACK_SIGNING_SECRET`, `SLACK_CHANNEL_ID`, and `RECIPE_SCRAPERS_DISPATCH_TOKEN` (a GitHub token that can dispatch this workflow). When the agent opens the `site/` pull request, `pin-site-pr.yml` pins it.
+
+## Repository variables
+
+- `SLACK_CHANNEL_ID` — channel that receives the pinned new-website pull request, and the only channel that may run `/add-site`, for example `C0123456789`
 - `SLACK_BOT_TOKEN` — Slack bot token with `chat:write` and `pins:write`. Invite the bot to the channel below. When the weekly job opens a new sync pull request, it posts the link and pins that message. Updating an existing sync pull request does not pin again.
 
 ## Repository variables
