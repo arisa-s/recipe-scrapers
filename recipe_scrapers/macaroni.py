@@ -20,8 +20,12 @@ class Macaroni(AbstractScraper):
         if not container:
             return result
         for li in container.find_all("li", recursive=False):
-            if "articleShow__contentsMateriialItem--groupWrapper" in li.get("class", []):
-                for child in li.find_all("li", class_="articleShow__contentsMateriialItem"):
+            if "articleShow__contentsMateriialItem--groupWrapper" in li.get(
+                "class", []
+            ):
+                for child in li.find_all(
+                    "li", class_="articleShow__contentsMateriialItem"
+                ):
                     result.append(normalize_string(child.text))
             else:
                 result.append(normalize_string(li.text))
