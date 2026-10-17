@@ -1,0 +1,38 @@
+name: Add recipe website
+
+on:
+  workflow_dispatch:
+    inputs:
+      recipe_url:
+        description: "Recipe page URL (required)"
+        required: true
+        type: string
+      note:
+        description: "What is missing or broken (optional)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  add-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Cursor SDK
+        run: npm install --prefix .github --no-package-lock
+      - name: Add or fix the scraper
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CURSOR_MODEL: ${{ vars.CURSOR_MODEL || 'grok-4.7-xhigh' }}
+          CURSOR_FIX_MODEL: ${{ vars.CURSOR_FIX_MODEL || vars.CURSOR_MODEL || 'grok-4.7-xhigh' }}
+          GH_TOKEN: ${{ secrets.SENTRY_CURSOR_GITHUB_TOKEN || github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          RECIPE_URL: ${{ inputs.recipe_url }}
+          RECIPE_NOTE: ${{ inputs.note }}
+        run: node .github/scripts/run-cursor-add-site.mjs
