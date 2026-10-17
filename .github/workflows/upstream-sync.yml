@@ -114,6 +114,7 @@ jobs:
           fi
           title="chore(sync): merge upstream recipe-scrapers"
           existing=$(gh pr list --base main --head sync/upstream --state open --json number --jq '.[0].number')
+          created=false
           if [ -n "$existing" ] && [ "$existing" != "null" ]; then
             gh pr edit "$existing" --title "$title" --body-file "${RUNNER_TEMP}/pr-body.md"
             number="$existing"
@@ -121,9 +122,49 @@ jobs:
           else
             url=$(gh pr create --base main --head sync/upstream --title "$title" --body-file "${RUNNER_TEMP}/pr-body.md")
             number=$(gh pr view "$url" --json number --jq .number)
+            created=true
           fi
           echo "pr_url=$url" >> "$GITHUB_OUTPUT"
           echo "pr_number=$number" >> "$GITHUB_OUTPUT"
+          echo "created=$created" >> "$GITHUB_OUTPUT"
+
+      - name: Pin new pull request in Slack
+        if: steps.sync.outputs.changed == 'true' && steps.pr.outputs.created == 'true'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID }}
+          PR_URL: ${{ steps.pr.outputs.pr_url }}
+          PR_NUMBER: ${{ steps.pr.outputs.pr_number }}
+          SUMMARY_PATH: ${{ runner.temp }}/sync-summary.json
+        run: |
+          if [ -z "${SLACK_BOT_TOKEN}" ] || [ -z "${SLACK_CHANNEL_ID}" ]; then
+            echo "Set secret SLACK_BOT_TOKEN and variable SLACK_CHANNEL_ID."
+            echo "The bot needs chat:write and pins:write, and it must be in that channel."
+            exit 1
+          fi
+          verdict="$(python -c 'import json,os; print(json.load(open(os.environ["SUMMARY_PATH"])).get("minimum_verdict","unknown"))')"
+          payload="$(jq -n \
+            --arg channel "$SLACK_CHANNEL_ID" \
+            --arg text "$(printf 'Upstream sync pull request #%s is open.\nVerdict: %s\n%s' "$PR_NUMBER" "$verdict" "$PR_URL")" \
+            '{channel:$channel, text:$text, unfurl_links:false}')"
+          response="$(curl -sS -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$payload")"
+          echo "$response" | jq -e '.ok == true' >/dev/null || {
+            echo "$response" | jq -c '{ok,error}'
+            exit 1
+          }
+          timestamp="$(echo "$response" | jq -r '.ts')"
+          pin="$(jq -n --arg channel "$SLACK_CHANNEL_ID" --arg timestamp "$timestamp" '{channel:$channel, timestamp:$timestamp}')"
+          pin_response="$(curl -sS -X POST https://slack.com/api/pins.add \
+            -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$pin")"
+          echo "$pin_response" | jq -e '.ok == true' >/dev/null || {
+            echo "$pin_response" | jq -c '{ok,error}'
+            exit 1
+          }
 
       - uses: actions/setup-node@v4
         if: steps.sync.outputs.changed == 'true'

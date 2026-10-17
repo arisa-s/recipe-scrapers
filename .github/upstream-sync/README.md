@@ -24,9 +24,11 @@ The agent may open a non-draft pull request. It must not merge or deploy. Commen
 - `SENTRY_ACCESS_TOKEN` — Sentry REST API and Sentry MCP for the bug-fix flow
 - `SYNC_GITHUB_TOKEN` or `SENTRY_CURSOR_GITHUB_TOKEN` — push `sync/upstream` and open pull requests when `GITHUB_TOKEN` cannot
 - `FLASK_DEPLOY_KEY` — private half of a write deploy key on `arisa-s/souschef-flask-server`. `deploy-flask.yml` uses it to push the scraper pin that Railway builds
+- `SLACK_BOT_TOKEN` — Slack bot token with `chat:write` and `pins:write`. Invite the bot to the channel below. When the weekly job opens a new sync pull request, it posts the link and pins that message. Updating an existing sync pull request does not pin again.
 
 ## Repository variables
 
+- `SLACK_CHANNEL_ID` — channel that receives the pinned sync pull request, for example `C0123456789`
 - `CURSOR_MODEL` — model for investigation and the sync report; defaults to `auto`
 - `CURSOR_FIX_MODEL` — model for fix pull requests; falls back to `CURSOR_MODEL`
 - `SENTRY_BASE_URL` — optional, defaults to `https://sentry.io`
