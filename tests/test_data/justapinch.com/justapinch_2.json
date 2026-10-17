@@ -1,57 +1,51 @@
 {
   "author": "Carol Kroesche",
   "canonical_url": "https://www.justapinch.com/recipes/main-course/italian/italian-stuffed-zucchini.html",
-  "site_name": "Just A Pinch Recipes",
+  "site_name": "Just A Pinch",
   "host": "justapinch.com",
   "language": "en",
   "title": "Italian Stuffed Zucchini",
   "ingredients": [
     "1-2 large zucchini",
-    "1 pound spaghetti noodles",
-    "1 tablespoon olive oil",
+    "1 pound(s) spaghetti noodles",
+    "## SAUCE",
+    "1 tablespoon(s) olive oil",
     "2 large yellow onions, thinly sliced",
-    "2 cloves garlic, crushed",
-    "1 can crushed Roma tomatoes or whole plum tomatoes (28 oz)",
-    "1 teaspoon salt or to taste",
-    "3 slices of day old Italian bread",
-    "2 eggs",
-    "1/4 cup Parmesan cheese, fat-free if desired, plus more for serving",
-    "2 teaspoons Italian seasoning",
-    "3 cloves garlic, crushed",
-    "2 teaspoons salt",
-    "3 tablespoons chopped fresh parsley",
-    "2 pounds ground beef (or bison)"
+    "2 clove(s) garlic, crushed",
+    "1 can(s) crushed Roma tomatoes or whole plum tomatoes (28 oz)",
+    "1 teaspoon(s) salt or to taste",
+    "## MEATBALLS",
+    "3 - slices of day old Italian bread",
+    "2 - eggs",
+    "1/4 cup(s) Parmesan cheese, fat-free if desired, plus more for serving",
+    "2 teaspoon(s) Italian seasoning",
+    "3 clove(s) garlic, crushed",
+    "2 teaspoon(s) salt",
+    "3 tablespoon(s) chopped fresh parsley",
+    "2 pound(s) ground beef (or bison)"
   ],
   "ingredient_groups": [
     {
       "ingredients": [
         "1-2 large zucchini",
-        "1 pound spaghetti noodles"
+        "1 pound(s) spaghetti noodles",
+        "## SAUCE",
+        "1 tablespoon(s) olive oil",
+        "2 large yellow onions, thinly sliced",
+        "2 clove(s) garlic, crushed",
+        "1 can(s) crushed Roma tomatoes or whole plum tomatoes (28 oz)",
+        "1 teaspoon(s) salt or to taste",
+        "## MEATBALLS",
+        "3 - slices of day old Italian bread",
+        "2 - eggs",
+        "1/4 cup(s) Parmesan cheese, fat-free if desired, plus more for serving",
+        "2 teaspoon(s) Italian seasoning",
+        "3 clove(s) garlic, crushed",
+        "2 teaspoon(s) salt",
+        "3 tablespoon(s) chopped fresh parsley",
+        "2 pound(s) ground beef (or bison)"
       ],
       "purpose": null
-    },
-    {
-      "ingredients": [
-        "1 tablespoon olive oil",
-        "2 large yellow onions, thinly sliced",
-        "2 cloves garlic, crushed",
-        "1 can crushed Roma tomatoes or whole plum tomatoes (28 oz)",
-        "1 teaspoon salt or to taste"
-      ],
-      "purpose": "SAUCE"
-    },
-    {
-      "ingredients": [
-        "3 slices of day old Italian bread",
-        "2 eggs",
-        "1/4 cup Parmesan cheese, fat-free if desired, plus more for serving",
-        "2 teaspoons Italian seasoning",
-        "3 cloves garlic, crushed",
-        "2 teaspoons salt",
-        "3 tablespoons chopped fresh parsley",
-        "2 pounds ground beef (or bison)"
-      ],
-      "purpose": "MEATBALLS"
     }
   ],
   "instructions_list": [
