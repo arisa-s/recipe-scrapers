@@ -1,5 +1,3 @@
-import html
-import inspect
 import math
 import re
 
@@ -167,7 +165,7 @@ def get_minutes_jp(element):
             pass
 
     # Define regex for Japanese time units
-    TIME_REGEX_JP = re.compile(
+    time_regex_jp = re.compile(
         r"(?:\D*(?P<days>\d+)\s*(?:日))?"
         r"(?:\D*(?P<hours>[\d.\s/?¼½¾⅓⅔⅕⅖⅗]+)\s*(?:時間))?"
         r"(?:\D*(?P<minutes>\d+)\s*(?:分))?"
@@ -175,7 +173,7 @@ def get_minutes_jp(element):
         re.IGNORECASE,
     )
 
-    time_units = TIME_REGEX_JP.search(time_text).groupdict()
+    time_units = time_regex_jp.search(time_text).groupdict()
     if not any(time_units.values()):
         return None
 

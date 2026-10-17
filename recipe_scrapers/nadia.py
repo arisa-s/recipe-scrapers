@@ -58,7 +58,11 @@ class Nadia(AbstractScraper):
             amt_div = li.find("div", class_=re.compile(r"IngredientsList_amount"))
 
             group_span = group_div.find("span") if group_div else None
-            group_text = normalize_string(group_span.text) if (group_span and group_span.text.strip()) else ""
+            group_text = (
+                normalize_string(group_span.text)
+                if (group_span and group_span.text.strip())
+                else ""
+            )
             ing_name = normalize_string(ing_div.text) if ing_div else ""
             ing_amount = normalize_string(amt_div.text) if amt_div else ""
 
@@ -76,14 +80,20 @@ class Nadia(AbstractScraper):
         for idx, li in enumerate(lis):
             group_div = li.find("div", class_=re.compile(r"IngredientsList_group"))
             group_span = group_div.find("span") if group_div else None
-            purpose = normalize_string(group_span.text) if (group_span and group_span.text.strip()) else None
+            purpose = (
+                normalize_string(group_span.text)
+                if (group_span and group_span.text.strip())
+                else None
+            )
 
             if purpose not in group_dict:
                 group_dict[purpose] = []
                 group_order.append(purpose)
             group_dict[purpose].append(all_ingredients[idx])
 
-        return [IngredientGroup(ingredients=group_dict[p], purpose=p) for p in group_order]
+        return [
+            IngredientGroup(ingredients=group_dict[p], purpose=p) for p in group_order
+        ]
 
     def instructions(self) -> str:
         return "\n".join(self.instructions_list())

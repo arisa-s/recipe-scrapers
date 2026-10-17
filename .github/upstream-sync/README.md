@@ -40,6 +40,11 @@ The URL is required. The note is optional. If the URL is missing, Slack replies 
 ## Repository variables
 
 - `SLACK_CHANNEL_ID` — channel that receives the pinned new-website pull request, and the only channel that may run `/add-site`, for example `C0123456789`
+- `SLACK_BOT_TOKEN` — Slack bot token with `chat:write` and `pins:write`. Invite the bot to the channel below. When the weekly job opens a new sync pull request, it posts the link and pins that message. Updating an existing sync pull request does not pin again.
+
+## Repository variables
+
+- `SLACK_CHANNEL_ID` — channel that receives the pinned sync pull request, for example `C0123456789`
 - `CURSOR_MODEL` — model for investigation and the sync report; defaults to `auto`
 - `CURSOR_FIX_MODEL` — model for fix pull requests; falls back to `CURSOR_MODEL`
 - `SENTRY_BASE_URL` — optional, defaults to `https://sentry.io`
