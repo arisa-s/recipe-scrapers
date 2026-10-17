@@ -5,7 +5,6 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from recipe_scrapers.__version__ import __version__
 from recipe_scrapers.settings import settings
 
 from ._exceptions import ElementNotFoundInHtml
