@@ -267,6 +267,15 @@ class TestUpstreamSyncMerge(unittest.TestCase):
             self.assertIn("VALUE = 'ours'", utils_text)
             self.assertNotIn("upstream", utils_text)
             self.assertIn("<<<<<<<", cookpad_text)
+            with self.assertRaises(SYNC.GitError):
+                SYNC.commit_merge(repo)
+            SYNC.release_conflicted_merge(repo, "sync/upstream", "upstream-main")
+            published = (repo / "recipe_scrapers/cookpad.py").read_text(
+                encoding="utf-8"
+            )
+            self.assertNotIn("<<<<<<<", published)
+            self.assertFalse(SYNC.merge_in_progress(repo))
+            self.assertEqual(SYNC.rev(repo, "HEAD"), SYNC.rev(repo, "upstream-main"))
             self.assertIn("recipe_scrapers/_utils_jp.py", result["kept_ours"])
             self.assertIn("recipe_scrapers/cookpad.py", result["unresolved_conflicts"])
             self.assertNotIn(

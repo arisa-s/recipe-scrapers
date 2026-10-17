@@ -102,6 +102,10 @@ jobs:
           # may still be unable to create a pull request.
           GH_TOKEN: ${{ github.token }}
         run: |
+          if git grep -l -E '^<<<<<<< ' HEAD -- . >/dev/null; then
+            echo "Refusing to push a commit that contains conflict markers."
+            exit 1
+          fi
           if git ls-remote --exit-code --heads origin sync/upstream >/dev/null 2>&1; then
             git fetch origin sync/upstream
             git push --force-with-lease origin sync/upstream

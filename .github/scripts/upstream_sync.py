@@ -777,6 +777,16 @@ def render_upstream_changes(summary: dict[str, object]) -> str:
     )
 
 
+def conflict_notice(summary: dict[str, object]) -> str:
+    if not summary.get("github_merge_conflict"):
+        return ""
+    return (
+        "Unresolved files were not committed. This branch is upstream "
+        "`hhursev/recipe-scrapers` `main`, so GitHub shows a merge conflict "
+        "with fork `main`."
+    )
+
+
 def safe_to_merge_line(verdict: str) -> str:
     if verdict == "SAFE":
         return "yes"
@@ -815,7 +825,8 @@ def render_report(summary: dict[str, object]) -> str:
             format_bullet_list(as_str_list(summary.get("dual_owned_changed"))),
             f"- Flask contract surface: {contract_text}",
             f"- Preservation checks: {preservation_text}",
-            "- Unresolved conflict markers:",
+            conflict_notice(summary),
+            "- Unresolved files:",
             format_bullet_list(as_str_list(summary.get("unresolved_conflicts"))),
             f"- unittest: {summary.get('unittest_status')}",
             f"- pre-commit: {summary.get('precommit_status')}",
@@ -854,7 +865,8 @@ def render_pr_body(summary: dict[str, object]) -> str:
             "SCRAPERS union notes:",
             format_bullet_list(as_str_list(summary.get("init_notes"))),
             "",
-            "Unresolved conflict markers:",
+            conflict_notice(summary),
+            "Unresolved files:",
             format_bullet_list(as_str_list(summary.get("unresolved_conflicts"))),
             "",
             "The latest `Upstream sync report` comment is the Flask safety verdict.",
@@ -945,6 +957,8 @@ def format_with_black(repo: Path) -> None:
 
 
 def commit_merge(repo: Path) -> None:
+    if files_with_markers(repo):
+        raise GitError("Refusing to commit conflict markers.")
     git(repo, ["add", "-A"])
     git(
         repo,
@@ -956,6 +970,19 @@ def commit_merge(repo: Path) -> None:
             MERGE_MESSAGE,
         ],
     )
+
+
+def release_conflicted_merge(repo: Path, branch: str, upstream_ref: str) -> None:
+    """Drop an unfinished merge and publish upstream without conflict markers.
+
+    A completed merge commit makes GitHub report the pull request as mergeable
+    even when ``<<<<<<<`` was saved as file text. Pointing the branch at
+    upstream leaves those commits marker-free, and GitHub then reports a merge
+    conflict against fork ``main``.
+    """
+    if merge_in_progress(repo):
+        git(repo, ["merge", "--abort"])
+    git(repo, ["checkout", "-B", branch, upstream_ref])
 
 
 def up_to_date_summary(
@@ -1029,11 +1056,15 @@ def sync_command(args: argparse.Namespace) -> int:
         print(f"Already up to date with {upstream_ref} at {upstream_sha}.")
         return 0
 
-    format_with_black(repo)
-    commit_merge(repo)
-    merge_sha = rev(repo, "HEAD")
     preservation = preservation_report(repo)
     preservation_ok = all(preservation.values())
+    github_merge_conflict = bool(result["unresolved_conflicts"])
+    if github_merge_conflict:
+        release_conflicted_merge(repo, args.branch, upstream_ref)
+    else:
+        format_with_black(repo)
+        commit_merge(repo)
+    merge_sha = rev(repo, "HEAD")
     contract = contract_changes(repo, fork_ref, "HEAD")
     dual_paths = [path for path in manifest["dual_owned"] if path != INIT_PATH]
     dual_owned = diff_names(repo, fork_ref, "HEAD", dual_paths)
@@ -1057,6 +1088,7 @@ def sync_command(args: argparse.Namespace) -> int:
         "kept_ours": result["kept_ours"],
         "init_notes": result["init_notes"],
         "unresolved_conflicts": result["unresolved_conflicts"],
+        "github_merge_conflict": github_merge_conflict,
         "preservation": preservation,
         "preservation_ok": preservation_ok,
         "contract_surface_changed": contract,
