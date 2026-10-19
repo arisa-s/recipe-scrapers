@@ -35,7 +35,7 @@ The agent may open a non-draft pull request. It must not merge or deploy. Commen
 Ingredients are only in the method, not a list.
 ```
 
-The URL is required. The note is optional. If the URL is missing, Slack replies with that template and does not start a run. The slash command posts to Rails `POST /webhooks/slack/add_site`. Rails needs `SLACK_SIGNING_SECRET`, `SLACK_CHANNEL_ID`, and `RECIPE_SCRAPERS_DISPATCH_TOKEN` (a GitHub token that can dispatch this workflow). When the agent opens the `site/` pull request, `pin-site-pr.yml` pins it.
+The URL is required. The note is optional. If the URL is missing, Slack replies with that template and does not start a run. The slash command posts to Rails `POST /webhooks/slack/add_site`. Rails needs `SLACK_SIGNING_SECRET`, `SLACK_CHANNEL_ID`, and `RECIPE_SCRAPERS_DISPATCH_TOKEN` (a GitHub token that can dispatch this workflow). When `add-site.yml` finishes, it pins the result in Slack, including the pull request link when one was opened. `pin-site-pr.yml` also pins when any pull request is opened from a `site/` branch.
 
 ## Repository variables
 

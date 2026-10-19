@@ -1,5 +1,6 @@
 import process from 'node:process'
 import { Agent } from '@cursor/sdk'
+import { branchForHost, writeResult } from './add-site-result.mjs'
 
 function recipeUrl() {
   const url = (process.env.RECIPE_URL || '').trim()
@@ -14,11 +15,6 @@ function recipeUrl() {
   }
   if (!parsed.hostname) throw new Error('Recipe URL is missing a host.')
   return { url, host: parsed.hostname.replace(/^www\./i, '').toLowerCase() }
-}
-
-function branchName(host) {
-  const slug = host.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() || 'site'
-  return `site/${slug}`.slice(0, 80)
 }
 
 function promptFor({ url, host, branch, note }) {
@@ -39,19 +35,38 @@ function promptFor({ url, host, branch, note }) {
   ].join('\n')
 }
 
+function summaryText(result) {
+  if (typeof result?.result === 'string') return result.result
+  if (result?.result == null) return ''
+  return JSON.stringify(result.result)
+}
+
 async function main() {
   const { url, host } = recipeUrl()
-  const branch = branchName(host)
+  const branch = branchForHost(host)
   const note = (process.env.RECIPE_NOTE || '').trim()
   const modelId = process.env.CURSOR_FIX_MODEL || process.env.CURSOR_MODEL || 'grok-4.7-xhigh'
   if (!process.env.CURSOR_API_KEY) throw new Error('CURSOR_API_KEY is required.')
 
   console.log(`Adding site ${host} on ${branch} with ${modelId}`)
-  const result = await Agent.prompt(promptFor({ url, host, branch, note }), {
-    apiKey: process.env.CURSOR_API_KEY,
-    model: { id: modelId },
-    local: { cwd: process.cwd(), settingSources: ['project'] },
-  })
+  let result
+  try {
+    result = await Agent.prompt(promptFor({ url, host, branch, note }), {
+      apiKey: process.env.CURSOR_API_KEY,
+      model: { id: modelId },
+      local: { cwd: process.cwd(), settingSources: ['project'] },
+    })
+  } catch (error) {
+    writeResult({
+      status: 'error',
+      summary: error instanceof Error ? error.message : 'Add-site workflow failed.',
+      host,
+      branch,
+      url,
+    })
+    throw error
+  }
+  writeResult({ status: result.status, summary: summaryText(result), host, branch, url })
   console.log(result.status)
   console.log(result.result || '')
   if (result.status !== 'finished') process.exitCode = 2

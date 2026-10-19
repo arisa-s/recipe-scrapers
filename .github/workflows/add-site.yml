@@ -36,3 +36,12 @@ jobs:
           RECIPE_URL: ${{ inputs.recipe_url }}
           RECIPE_NOTE: ${{ inputs.note }}
         run: node .github/scripts/run-cursor-add-site.mjs
+      - name: Pin the result in Slack
+        if: always() && !cancelled()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID }}
+          RECIPE_URL: ${{ inputs.recipe_url }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+        run: node .github/scripts/pin-add-site-result.mjs
