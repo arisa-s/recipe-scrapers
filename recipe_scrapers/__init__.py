@@ -675,7 +675,6 @@ from .wdr import WDR
 from .wearenotmartha import WeAreNotMartha
 from .wedishitup import WeDishItUp
 from .weightwatchers import WeightWatchers
-from .weightwatcherspublic import WeightWatchersPublic
 from .wellplated import WellPlated
 from .whatsgabycooking import WhatsGabyCooking
 from .whole30 import Whole30
@@ -1443,7 +1442,6 @@ SCRAPERS = {
     WeAreNotMartha.host(): WeAreNotMartha,
     WeDishItUp.host(): WeDishItUp,
     WeightWatchers.host(): WeightWatchers,
-    WeightWatchersPublic.host(): WeightWatchersPublic,
     WellPlated.host(): WellPlated,
     WhatsGabyCooking.host(): WhatsGabyCooking,
     Whole30.host(): Whole30,
@@ -1557,6 +1555,7 @@ def scrape_html(
         )
         raise ValueError(msg)
 
+    assert html is not None
     host_name = get_host_name(org_url)
     if host_name in SCRAPERS:
         return SCRAPERS[host_name](html=html, url=org_url, best_image=best_image)
